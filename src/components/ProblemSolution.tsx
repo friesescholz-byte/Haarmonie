@@ -42,7 +42,7 @@ export const ProblemSolution: React.FC = () => {
           <span className="inline-block text-[#C59A44] font-bold text-xs uppercase tracking-widest bg-[#FAF3E0] px-3 py-1 rounded-full mb-3">
             Warum Haarmonie anders ist
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#071B33] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#0A0A0C] tracking-tight">
             Schluss mit Salon-Stress. <br />
             <span className="italic font-normal text-[#C59A44]">Willkommen in Ihrer persönlichen Wohlfühloase.</span>
           </h2>
@@ -61,7 +61,7 @@ export const ProblemSolution: React.FC = () => {
               <div>
                 {/* Header Badge */}
                 <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b border-[#E8E2D8]">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#071B33] bg-white border border-[#D4AF37]/40 px-2.5 py-1 rounded-md">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#0A0A0C] bg-white border border-[#D4AF37]/40 px-2.5 py-1 rounded-md">
                     {item.badge}
                   </span>
                   <span className="text-xs font-semibold text-rose-700 bg-rose-50 px-2.5 py-1 rounded">
@@ -71,7 +71,7 @@ export const ProblemSolution: React.FC = () => {
 
                 {/* Problem Statement */}
                 <div className="mb-4">
-                  <h3 className="text-base sm:text-lg font-serif font-bold text-[#071B33] mb-1.5">
+                  <h3 className="text-base sm:text-lg font-serif font-bold text-[#0A0A0C] mb-1.5">
                     {item.problemTitle}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">

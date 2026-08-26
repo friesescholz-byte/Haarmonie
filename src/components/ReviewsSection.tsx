@@ -12,14 +12,14 @@ export const ReviewsSection: React.FC = () => {
           <span className="inline-block text-[#C59A44] font-bold text-xs uppercase tracking-widest bg-[#FAF3E0] px-3 py-1 rounded-full mb-3">
             Echtes Kundenfeedback
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#071B33] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#0A0A0C] tracking-tight">
             Was Nienburg über Haarmonie sagt
           </h2>
           <div className="flex items-center justify-center gap-2 mt-3">
             <div className="flex text-[#D4AF37]">
               {'★'.repeat(5)}
             </div>
-            <span className="text-sm font-bold text-[#071B33]">
+            <span className="text-sm font-bold text-[#0A0A0C]">
               {SALON_DATA.googleRating} von 5.0 Sternen auf Google
             </span>
           </div>
@@ -38,7 +38,7 @@ export const ReviewsSection: React.FC = () => {
                 <div className="flex text-[#D4AF37] text-sm mb-3">
                   {'★'.repeat(rev.stars)}
                 </div>
-                <span className="inline-block bg-[#FAF3E0] text-[#071B33] text-[11px] font-bold px-2.5 py-0.5 rounded mb-3">
+                <span className="inline-block bg-[#FAF3E0] text-[#0A0A0C] text-[11px] font-bold px-2.5 py-0.5 rounded mb-3">
                   {rev.highlight}
                 </span>
                 <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed">
@@ -48,7 +48,7 @@ export const ReviewsSection: React.FC = () => {
 
               <div className="mt-6 pt-4 border-t border-[#E8E2D8] flex items-center justify-between text-xs">
                 <div>
-                  <span className="font-bold text-[#071B33] block">{rev.name}</span>
+                  <span className="font-bold text-[#0A0A0C] block">{rev.name}</span>
                   <span className="text-slate-500">{rev.city}</span>
                 </div>
                 <div className="flex items-center gap-1 text-emerald-600 font-semibold text-[11px]">

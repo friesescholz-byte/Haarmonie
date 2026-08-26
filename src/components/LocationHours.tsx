@@ -15,7 +15,7 @@ export const LocationHours: React.FC = () => {
               <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] block mb-2">
                 Kontakt &amp; Anfahrt
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#071B33]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0A0A0C]">
                 Wir freuen uns auf Ihren Besuch.
               </h2>
             </div>
@@ -24,7 +24,7 @@ export const LocationHours: React.FC = () => {
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-[#C59A44] flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-heading font-bold text-lg text-[#071B33]">Adresse</h4>
+                  <h4 className="font-heading font-bold text-lg text-[#0A0A0C]">Adresse</h4>
                   <p className="text-base text-[#4A5568]">
                     {SALON_DATA.name}<br />
                     {SALON_DATA.address}, {SALON_DATA.zipCity}
@@ -38,10 +38,10 @@ export const LocationHours: React.FC = () => {
               <div className="flex items-start gap-4">
                 <Phone className="w-6 h-6 text-[#C59A44] flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-heading font-bold text-lg text-[#071B33]">Telefonische Terminvereinbarung</h4>
+                  <h4 className="font-heading font-bold text-lg text-[#0A0A0C]">Telefonische Terminvereinbarung</h4>
                   <a
                     href={`tel:${SALON_DATA.phoneClean}`}
-                    className="text-2xl font-bold font-heading text-[#071B33] hover:text-[#C59A44] transition-colors block mt-0.5"
+                    className="text-2xl font-bold font-heading text-[#0A0A0C] hover:text-[#C59A44] transition-colors block mt-0.5"
                   >
                     {SALON_DATA.phone}
                   </a>
@@ -54,15 +54,15 @@ export const LocationHours: React.FC = () => {
               <div className="flex items-start gap-4 pt-2">
                 <Clock className="w-6 h-6 text-[#C59A44] flex-shrink-0 mt-1" />
                 <div className="w-full">
-                  <h4 className="font-heading font-bold text-lg text-[#071B33] mb-3">Öffnungszeiten</h4>
+                  <h4 className="font-heading font-bold text-lg text-[#0A0A0C] mb-3">Öffnungszeiten</h4>
                   <div className="space-y-2 text-sm text-[#4A5568]">
                     <div className="flex justify-between py-1.5 border-b border-slate-100">
                       <span className="font-medium">Dienstag – Freitag</span>
-                      <span className="font-bold text-[#071B33]">09:00 – 18:00 Uhr</span>
+                      <span className="font-bold text-[#0A0A0C]">09:00 – 18:00 Uhr</span>
                     </div>
                     <div className="flex justify-between py-1.5 border-b border-slate-100">
                       <span className="font-medium">Samstag</span>
-                      <span className="font-bold text-[#071B33]">08:00 – 13:00 Uhr</span>
+                      <span className="font-bold text-[#0A0A0C]">08:00 – 13:00 Uhr</span>
                     </div>
                     <div className="flex justify-between py-1.5 text-slate-400">
                       <span>Montag &amp; Sonntag</span>
@@ -76,7 +76,7 @@ export const LocationHours: React.FC = () => {
             <div className="pt-4">
               <a
                 href={`tel:${SALON_DATA.phoneClean}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#071B33] hover:bg-[#102A4C] text-white px-8 py-4 rounded-full font-bold text-base tracking-wide transition-all shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#0A0A0C] hover:bg-[#222226] text-white px-8 py-4 rounded-full font-bold text-base tracking-wide transition-all shadow-md"
               >
                 <Phone className="w-4 h-4 text-[#D4AF37]" />
                 <span>Jetzt anrufen: {SALON_DATA.phone}</span>

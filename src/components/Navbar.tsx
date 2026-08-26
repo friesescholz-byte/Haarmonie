@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center gap-4 pl-4 flex-shrink-0">
           <a
             href="#termin"
-            className="inline-flex items-center gap-2 bg-[#FAF3E0] hover:bg-[#F5EAD0] text-[#071B33] border border-[#C59A44]/40 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-[#FAF3E0] hover:bg-[#F5EAD0] text-[#0A0A0C] border border-[#C59A44]/40 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap"
           >
             <Calendar className="w-3.5 h-3.5 text-[#C59A44]" />
             <span>Termin anfragen</span>
@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
 
           <a
             href={`tel:${SALON_DATA.phoneClean}`}
-            className="inline-flex items-center gap-2 bg-[#071B33] hover:bg-[#102A4C] text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-[#0A0A0C] hover:bg-[#222226] text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow whitespace-nowrap"
           >
             <Phone className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span>{SALON_DATA.phone}</span>
@@ -75,7 +75,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-[#071B33]"
+          className="lg:hidden p-2 text-[#0A0A0C]"
           aria-label="Menü"
         >
           {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -90,7 +90,7 @@ export const Navbar: React.FC = () => {
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-lg font-medium text-[#071B33] hover:text-[#C59A44] py-1.5"
+              className="block text-lg font-medium text-[#0A0A0C] hover:text-[#C59A44] py-1.5"
             >
               {link.label}
             </a>
@@ -99,14 +99,14 @@ export const Navbar: React.FC = () => {
             <a
               href="#termin"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 bg-[#FAF3E0] text-[#071B33] font-bold rounded-xl text-center text-sm flex items-center justify-center gap-2 border border-[#C59A44]/40"
+              className="w-full py-3 bg-[#FAF3E0] text-[#0A0A0C] font-bold rounded-xl text-center text-sm flex items-center justify-center gap-2 border border-[#C59A44]/40"
             >
               <Calendar className="w-4 h-4 text-[#C59A44]" />
               <span>Termin online anfragen</span>
             </a>
             <a
               href={`tel:${SALON_DATA.phoneClean}`}
-              className="w-full py-3.5 bg-[#071B33] text-white rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2 shadow"
+              className="w-full py-3.5 bg-[#0A0A0C] text-white rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2 shadow"
             >
               <Phone className="w-4 h-4 text-[#D4AF37]" />
               <span>Jetzt anrufen: {SALON_DATA.phone}</span>

@@ -26,7 +26,7 @@ export const AboutTeam: React.FC = () => {
               <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] bg-[#FAF3E0] border border-[#C59A44]/30 px-3.5 py-1 rounded-full font-heading">
                 Über uns &bull; Matthias Zahn &amp; Team
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-heading font-bold text-[#071B33] leading-[1.15]">
+              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-heading font-bold text-[#0A0A0C] leading-[1.15]">
                 „Wir nehmen uns echte Zeit für Sie und Ihr Haar.“
               </h2>
             </div>
@@ -61,7 +61,7 @@ export const AboutTeam: React.FC = () => {
             <div className="pt-3 flex flex-wrap items-center gap-4">
               <a
                 href="#termin"
-                className="inline-flex items-center gap-2 bg-[#071B33] hover:bg-[#102A4C] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-[#0A0A0C] hover:bg-[#222226] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 font-heading"
               >
                 <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>Termin vereinbaren</span>

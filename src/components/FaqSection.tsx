@@ -18,7 +18,7 @@ export const FaqSection: React.FC = () => {
           <span className="inline-block text-[#C59A44] font-bold text-xs uppercase tracking-widest bg-[#FAF3E0] px-3 py-1 rounded-full mb-3">
             Häufige Fragen
           </span>
-          <h2 className="text-3xl font-serif font-bold text-[#071B33] tracking-tight">
+          <h2 className="text-3xl font-serif font-bold text-[#0A0A0C] tracking-tight">
             Transparenz & Wissenswertes
           </h2>
           <p className="text-slate-600 text-sm mt-2">
@@ -39,7 +39,7 @@ export const FaqSection: React.FC = () => {
                   onClick={() => toggle(idx)}
                   className="w-full p-5 text-left flex justify-between items-center gap-4 hover:bg-[#FAF8F5] transition-colors"
                 >
-                  <span className="font-serif font-bold text-base sm:text-lg text-[#071B33]">
+                  <span className="font-serif font-bold text-base sm:text-lg text-[#0A0A0C]">
                     {faq.q}
                   </span>
                   <ChevronDown

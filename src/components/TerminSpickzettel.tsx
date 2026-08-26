@@ -43,7 +43,7 @@ export const TerminSpickzettel: React.FC<TerminSpickzettelProps> = ({ isOpen, on
             <Calendar className="w-3.5 h-3.5" />
             Schritt für Schritt zum Wunschtermin
           </span>
-          <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#071B33]">
+          <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#0A0A0C]">
             Ihr persönlicher Termin-Spickzettel
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
@@ -62,7 +62,7 @@ export const TerminSpickzettel: React.FC<TerminSpickzettelProps> = ({ isOpen, on
 
       {/* Step 1: Service */}
       <div className="mb-6">
-        <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2.5">
+        <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2.5">
           1. Was möchten Sie machen lassen?
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -76,7 +76,7 @@ export const TerminSpickzettel: React.FC<TerminSpickzettelProps> = ({ isOpen, on
                 onClick={() => setSelectedService(s.label)}
                 className={`p-3 rounded-xl text-xs font-semibold flex items-center gap-2.5 text-left transition-all ${
                   active
-                    ? 'bg-[#071B33] text-[#D4AF37] border-2 border-[#D4AF37] shadow'
+                    ? 'bg-[#0A0A0C] text-[#D4AF37] border-2 border-[#D4AF37] shadow'
                     : 'bg-[#FAF8F5] text-slate-700 hover:bg-slate-200 border border-[#E8E2D8]'
                 }`}
               >
@@ -91,13 +91,13 @@ export const TerminSpickzettel: React.FC<TerminSpickzettelProps> = ({ isOpen, on
       {/* Step 2: Day & Time */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
         <div>
-          <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+          <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
             2. Bevorzugte Wochentage:
           </label>
           <select
             value={selectedDay}
             onChange={(e) => setSelectedDay(e.target.value)}
-            className="w-full p-3 rounded-xl bg-[#FAF8F5] border border-[#E8E2D8] text-xs font-semibold text-[#071B33] focus:outline-none focus:border-[#071B33]"
+            className="w-full p-3 rounded-xl bg-[#FAF8F5] border border-[#E8E2D8] text-xs font-semibold text-[#0A0A0C] focus:outline-none focus:border-[#0A0A0C]"
           >
             {days.map((d) => (
               <option key={d} value={d}>{d}</option>
@@ -106,13 +106,13 @@ export const TerminSpickzettel: React.FC<TerminSpickzettelProps> = ({ isOpen, on
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+          <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
             3. Bevorzugtes Zeitfenster:
           </label>
           <select
             value={selectedTime}
             onChange={(e) => setSelectedTime(e.target.value)}
-            className="w-full p-3 rounded-xl bg-[#FAF8F5] border border-[#E8E2D8] text-xs font-semibold text-[#071B33] focus:outline-none focus:border-[#071B33]"
+            className="w-full p-3 rounded-xl bg-[#FAF8F5] border border-[#E8E2D8] text-xs font-semibold text-[#0A0A0C] focus:outline-none focus:border-[#0A0A0C]"
           >
             {times.map((t) => (
               <option key={t} value={t}>{t}</option>
@@ -123,11 +123,11 @@ export const TerminSpickzettel: React.FC<TerminSpickzettelProps> = ({ isOpen, on
 
       {/* Summary Box */}
       <div className="bg-[#FAF3E0] border border-[#D4AF37]/50 rounded-2xl p-4 sm:p-5 mb-6">
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#071B33] mb-2">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0A0A0C] mb-2">
           <Sparkles className="w-4 h-4 text-[#C59A44]" />
           <span>Ihr Vorbereiteter Wunsch:</span>
         </div>
-        <p className="text-sm font-serif font-bold text-[#071B33]">
+        <p className="text-sm font-serif font-bold text-[#0A0A0C]">
           „Hallo Matthias, ich hätte gerne einen Termin für <span className="text-[#C59A44]">{selectedService}</span>, am besten <span className="text-[#C59A44]">{selectedDay}</span> ({selectedTime}).“
         </p>
         <span className="block text-[11px] text-slate-600 mt-2">
@@ -138,7 +138,7 @@ export const TerminSpickzettel: React.FC<TerminSpickzettelProps> = ({ isOpen, on
       {/* Final Call CTA */}
       <a
         href={`tel:${SALON_DATA.phoneClean}`}
-        className="w-full py-4 bg-[#071B33] hover:bg-[#102A4C] text-white font-bold text-base rounded-2xl flex items-center justify-center gap-3 transition-all shadow-lux hover:scale-[1.01] border border-[#D4AF37]/40"
+        className="w-full py-4 bg-[#0A0A0C] hover:bg-[#222226] text-white font-bold text-base rounded-2xl flex items-center justify-center gap-3 transition-all shadow-lux hover:scale-[1.01] border border-[#D4AF37]/40"
       >
         <Phone className="w-5 h-5 text-[#D4AF37]" />
         <span>Jetzt mit Vorbereitung anrufen: {SALON_DATA.phone}</span>
@@ -160,7 +160,7 @@ export const TerminSpickzettel: React.FC<TerminSpickzettelProps> = ({ isOpen, on
     <section className="py-16 sm:py-24 bg-gradient-to-b from-[#FAF8F5] to-white" id="spickzettel">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-3xl font-serif font-bold text-[#071B33]">
+          <h2 className="text-3xl font-serif font-bold text-[#0A0A0C]">
             Unkompliziert zum Wunschtermin
           </h2>
           <p className="text-slate-600 text-sm mt-1">

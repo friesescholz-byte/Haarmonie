@@ -4,14 +4,14 @@ import { Scissors, ShieldCheck, Clock, CheckCircle } from 'lucide-react';
 
 export const GentlemenSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-[#071B33] text-white relative overflow-hidden">
+    <section className="py-16 sm:py-24 bg-[#0A0A0C] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           {/* Left Text */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-[#102A4C] border border-[#D4AF37]/40 px-3.5 py-1.5 rounded-full text-[#D4AF37] text-xs font-semibold">
+            <div className="inline-flex items-center gap-2 bg-[#222226] border border-[#D4AF37]/40 px-3.5 py-1.5 rounded-full text-[#D4AF37] text-xs font-semibold">
               <Scissors className="w-4 h-4" />
               <span>Gentlemen's Cut & Care</span>
             </div>
@@ -42,7 +42,7 @@ export const GentlemenSection: React.FC = () => {
             <div className="pt-4">
               <a
                 href="tel:+495021913508"
-                className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#C59A44] text-[#071B33] font-bold px-6 py-3.5 rounded-xl text-sm transition-all shadow hover:scale-105"
+                className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#C59A44] text-[#0A0A0C] font-bold px-6 py-3.5 rounded-xl text-sm transition-all shadow hover:scale-105"
               >
                 <span>Herren-Termin vereinbaren</span>
               </a>
@@ -55,7 +55,7 @@ export const GentlemenSection: React.FC = () => {
               {HERREN_STYLES.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#102A4C]/80 border border-[#D4AF37]/30 rounded-2xl overflow-hidden shadow-lux group flex flex-col justify-between"
+                  className="bg-[#222226]/80 border border-[#D4AF37]/30 rounded-2xl overflow-hidden shadow-lux group flex flex-col justify-between"
                 >
                   <div className="aspect-[4/5] overflow-hidden">
                     <img

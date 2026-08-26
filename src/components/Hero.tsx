@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
               <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] bg-[#FAF3E0]/95 backdrop-blur-md border border-[#C59A44]/40 px-4 py-1.5 rounded-full shadow-xs">
                 Friseurmeister Matthias Zahn &bull; Parkstraße 15
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-heading font-bold text-[#071B33] leading-[1.14] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-heading font-bold text-[#0A0A0C] leading-[1.14] tracking-tight">
                 Zeit für Sie. <br />
                 <span className="font-italic-serif text-[#C59A44] font-normal text-4xl sm:text-5xl lg:text-[60px] inline-block my-1">
                   Im 100-jährigen
@@ -80,7 +80,7 @@ export const Hero: React.FC = () => {
               <div>
                 <a
                   href="#termin"
-                  className="inline-flex items-center justify-center gap-3 bg-[#071B33] hover:bg-[#102A4C] text-white px-9 py-4 rounded-full font-bold text-base tracking-wide transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 group"
+                  className="inline-flex items-center justify-center gap-3 bg-[#0A0A0C] hover:bg-[#222226] text-white px-9 py-4 rounded-full font-bold text-base tracking-wide transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 group font-heading"
                 >
                   <Calendar className="w-5 h-5 text-[#D4AF37] group-hover:rotate-6 transition-transform" />
                   <span>Termin online anfragen</span>
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
                 <span>Oder direkt anrufen:</span>
                 <a
                   href={`tel:${SALON_DATA.phoneClean}`}
-                  className="font-bold text-[#071B33] hover:text-[#C59A44] transition-colors inline-flex items-center gap-1.5 underline decoration-[#C59A44]/50 hover:decoration-[#C59A44]"
+                  className="font-bold text-[#0A0A0C] hover:text-[#C59A44] transition-colors inline-flex items-center gap-1.5 underline decoration-[#C59A44]/50 hover:decoration-[#C59A44]"
                 >
                   <Phone className="w-4 h-4 text-[#C59A44]" />
                   <span>{SALON_DATA.phone}</span>
@@ -101,13 +101,13 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Key Facts with Clickable Google Trust Link */}
-            <div className="pt-8 border-t border-[#EAE6DF]/80 grid grid-cols-3 gap-6 text-[#071B33]">
+            <div className="pt-8 border-t border-[#EAE6DF]/80 grid grid-cols-3 gap-6 text-[#0A0A0C]">
               <div>
-                <span className="block text-3xl font-heading font-bold text-[#071B33]">25+</span>
+                <span className="block text-3xl font-heading font-bold text-[#0A0A0C]">25+</span>
                 <span className="text-xs sm:text-sm text-[#4A5568] uppercase tracking-wider font-semibold">Jahre Meister</span>
               </div>
               <div>
-                <span className="block text-3xl font-heading font-bold text-[#071B33]">100+</span>
+                <span className="block text-3xl font-heading font-bold text-[#0A0A0C]">100+</span>
                 <span className="text-xs sm:text-sm text-[#4A5568] uppercase tracking-wider font-semibold">Jahre Haus</span>
               </div>
               
@@ -125,7 +125,7 @@ export const Hero: React.FC = () => {
                   </span>
                   <ArrowUpRight className="w-4 h-4 text-[#C59A44] opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                 </div>
-                <span className="text-xs sm:text-sm text-[#4A5568] group-hover:text-[#071B33] uppercase tracking-wider font-semibold block transition-colors">
+                <span className="text-xs sm:text-sm text-[#4A5568] group-hover:text-[#0A0A0C] uppercase tracking-wider font-semibold block transition-colors">
                   Google Trust
                 </span>
               </a>
@@ -206,7 +206,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. Seamless Organic Curved Transition with Golden Hair Strands */}
+      {/* 2. Seamless Organic Curved Transition with Interwoven Gold & Black Hair Strands */}
       <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
         
         <svg
@@ -221,30 +221,49 @@ export const Hero: React.FC = () => {
             fill="#FFFFFF"
           />
 
-          {/* Primary Golden Hair Wave Line */}
+          {/* 1. Primary Golden Hair Wave Line */}
           <path
             d="M0,40 C320,110 480,10 720,55 C960,100 1180,20 1440,50"
             stroke="url(#hairGold1)"
-            strokeWidth="2.5"
+            strokeWidth="2.2"
             strokeLinecap="round"
           />
 
-          {/* Secondary Delicate Golden Strands */}
+          {/* 2. Interwoven Gold-to-Black Gradient Curve */}
           <path
-            d="M0,25 C260,95 540,5 820,70 C1100,120 1260,15 1440,35"
-            stroke="url(#hairGold2)"
-            strokeWidth="1.2"
-            strokeDasharray="6 3"
-            strokeOpacity="0.85"
-          />
-          <path
-            d="M0,55 C380,120 620,25 940,45 C1160,60 1340,30 1440,65"
-            stroke="#DFBE72"
-            strokeWidth="0.8"
-            strokeOpacity="0.5"
+            d="M0,32 C280,102 510,8 770,60 C1030,110 1220,18 1440,42"
+            stroke="url(#goldDarkGrad)"
+            strokeWidth="1.4"
+            strokeLinecap="round"
           />
 
+          {/* 3. Subtle Black/Charcoal Hair Strand (Dashed) */}
+          <path
+            d="M0,25 C260,95 540,5 820,70 C1100,120 1260,15 1440,35"
+            stroke="url(#hairBlack1)"
+            strokeWidth="1.2"
+            strokeDasharray="6 3"
+          />
+
+          {/* 4. Fine Delicate Dark Charcoal Flowing Line */}
+          <path
+            d="M0,50 C360,118 600,20 920,48 C1140,65 1320,25 1440,60"
+            stroke="#0A0A0C"
+            strokeWidth="0.9"
+            strokeOpacity="0.4"
+          />
+
+          {/* 5. Extra Soft Black Accent Whisper Curve */}
+          <path
+            d="M0,60 C400,125 650,30 960,40 C1180,55 1360,35 1440,70"
+            stroke="#0A0A0C"
+            strokeWidth="0.6"
+            strokeOpacity="0.25"
+          />
+
+          {/* Gradients */}
           <defs>
+            {/* Rich Gold Gradient */}
             <linearGradient id="hairGold1" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#C59A44" stopOpacity="0.2" />
               <stop offset="30%" stopColor="#D4AF37" stopOpacity="0.9" />
@@ -252,10 +271,20 @@ export const Hero: React.FC = () => {
               <stop offset="85%" stopColor="#C59A44" stopOpacity="0.8" />
               <stop offset="100%" stopColor="#C59A44" stopOpacity="0.2" />
             </linearGradient>
-            <linearGradient id="hairGold2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.1" />
-              <stop offset="50%" stopColor="#DFBE72" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#C59A44" stopOpacity="0.1" />
+
+            {/* Gold to Deep Black Gradient */}
+            <linearGradient id="goldDarkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#C59A44" stopOpacity="0.1" />
+              <stop offset="35%" stopColor="#D4AF37" stopOpacity="0.8" />
+              <stop offset="65%" stopColor="#0A0A0C" stopOpacity="0.75" />
+              <stop offset="100%" stopColor="#0A0A0C" stopOpacity="0.1" />
+            </linearGradient>
+
+            {/* Pure Smoky Black Gradient */}
+            <linearGradient id="hairBlack1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#0A0A0C" stopOpacity="0.1" />
+              <stop offset="50%" stopColor="#0A0A0C" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#0A0A0C" stopOpacity="0.1" />
             </linearGradient>
           </defs>
         </svg>

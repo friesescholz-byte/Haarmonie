@@ -51,7 +51,7 @@ export const DamenStylesShowcase: React.FC = () => {
               <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] bg-[#FAF3E0] border border-[#C59A44]/30 px-3.5 py-1 rounded-full mb-3 font-heading">
                 Damen-Schnitt &amp; Coloration
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#071B33]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#0A0A0C]">
                 Individuelle Haarschnitte &amp; Glanz.
               </h2>
             </div>
@@ -64,7 +64,7 @@ export const DamenStylesShowcase: React.FC = () => {
               
               <button
                 onClick={prevDamen}
-                className="w-11 h-11 rounded-full border border-[#EAE6DF] hover:border-[#C59A44] bg-[#FAF8F5] hover:bg-[#071B33] text-[#071B33] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xs hover:shadow-md"
+                className="w-11 h-11 rounded-full border border-[#EAE6DF] hover:border-[#C59A44] bg-[#FAF8F5] hover:bg-[#0A0A0C] text-[#0A0A0C] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xs hover:shadow-md"
                 aria-label="Vorherige 4 Damen-Frisuren"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -72,7 +72,7 @@ export const DamenStylesShowcase: React.FC = () => {
 
               <button
                 onClick={nextDamen}
-                className="w-11 h-11 rounded-full border border-[#EAE6DF] hover:border-[#C59A44] bg-[#FAF8F5] hover:bg-[#071B33] text-[#071B33] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xs hover:shadow-md"
+                className="w-11 h-11 rounded-full border border-[#EAE6DF] hover:border-[#C59A44] bg-[#FAF8F5] hover:bg-[#0A0A0C] text-[#0A0A0C] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xs hover:shadow-md"
                 aria-label="Nächste 4 Damen-Frisuren"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -103,7 +103,7 @@ export const DamenStylesShowcase: React.FC = () => {
                     />
                   </div>
                   <div className="px-1 pt-1">
-                    <h4 className="font-heading font-bold text-base text-[#071B33] group-hover:text-[#C59A44] transition-colors leading-snug">
+                    <h4 className="font-heading font-bold text-base text-[#0A0A0C] group-hover:text-[#C59A44] transition-colors leading-snug">
                       {style.title}
                     </h4>
                     <p className="text-xs text-[#556375] mt-1 leading-relaxed">
@@ -124,7 +124,7 @@ export const DamenStylesShowcase: React.FC = () => {
               <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] bg-[#FAF3E0] border border-[#C59A44]/30 px-3.5 py-1 rounded-full mb-3 font-heading">
                 Herren-Bereich
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#071B33]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[#0A0A0C]">
                 Präzises Handwerk für den Mann.
               </h2>
               <p className="text-base text-[#556375] mt-2">
@@ -140,7 +140,7 @@ export const DamenStylesShowcase: React.FC = () => {
               
               <button
                 onClick={prevHerren}
-                className="w-11 h-11 rounded-full border border-[#EAE6DF] hover:border-[#C59A44] bg-[#FAF8F5] hover:bg-[#071B33] text-[#071B33] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xs hover:shadow-md"
+                className="w-11 h-11 rounded-full border border-[#EAE6DF] hover:border-[#C59A44] bg-[#FAF8F5] hover:bg-[#0A0A0C] text-[#0A0A0C] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xs hover:shadow-md"
                 aria-label="Vorherige 4 Herren-Frisuren"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -148,7 +148,7 @@ export const DamenStylesShowcase: React.FC = () => {
 
               <button
                 onClick={nextHerren}
-                className="w-11 h-11 rounded-full border border-[#EAE6DF] hover:border-[#C59A44] bg-[#FAF8F5] hover:bg-[#071B33] text-[#071B33] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xs hover:shadow-md"
+                className="w-11 h-11 rounded-full border border-[#EAE6DF] hover:border-[#C59A44] bg-[#FAF8F5] hover:bg-[#0A0A0C] text-[#0A0A0C] hover:text-white flex items-center justify-center transition-all duration-300 shadow-xs hover:shadow-md"
                 aria-label="Nächste 4 Herren-Frisuren"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -179,7 +179,7 @@ export const DamenStylesShowcase: React.FC = () => {
                     />
                   </div>
                   <div className="px-1 pt-1">
-                    <h4 className="font-heading font-bold text-base text-[#071B33] group-hover:text-[#C59A44] transition-colors leading-snug">
+                    <h4 className="font-heading font-bold text-base text-[#0A0A0C] group-hover:text-[#C59A44] transition-colors leading-snug">
                       {style.title}
                     </h4>
                     <p className="text-xs text-[#556375] mt-1 leading-relaxed">

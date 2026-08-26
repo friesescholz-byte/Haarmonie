@@ -12,7 +12,7 @@ import { Footer } from './components/Footer';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1E2530] font-sans selection:bg-[#D4AF37] selection:text-[#071B33]">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1E2530] font-sans selection:bg-[#D4AF37] selection:text-[#0A0A0C]">
       <Navbar />
       <main>
         {/* 1. Hero */}

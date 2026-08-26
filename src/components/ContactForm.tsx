@@ -30,7 +30,7 @@ export const ContactForm: React.FC = () => {
             <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] block">
               Terminvereinbarung
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#071B33] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0A0A0C] leading-tight">
               Wunschtermin ganz einfach anfragen.
             </h2>
             <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
@@ -46,7 +46,7 @@ export const ContactForm: React.FC = () => {
                   <span className="text-xs text-[#718096] uppercase font-semibold block">Direkt anrufen</span>
                   <a
                     href={`tel:${SALON_DATA.phoneClean}`}
-                    className="text-xl font-heading font-bold text-[#071B33] hover:text-[#C59A44] transition-colors"
+                    className="text-xl font-heading font-bold text-[#0A0A0C] hover:text-[#C59A44] transition-colors"
                   >
                     {SALON_DATA.phone}
                   </a>
@@ -65,7 +65,7 @@ export const ContactForm: React.FC = () => {
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-[#071B33]">
+                <h3 className="text-2xl font-heading font-bold text-[#0A0A0C]">
                   Vielen Dank für Ihre Anfrage!
                 </h3>
                 <p className="text-slate-600 text-base max-w-md mx-auto">
@@ -81,7 +81,7 @@ export const ContactForm: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-heading font-bold text-[#071B33] mb-1">
+                  <h3 className="text-2xl font-heading font-bold text-[#0A0A0C] mb-1">
                     Terminanfrage senden
                   </h3>
                   <p className="text-xs sm:text-sm text-[#718096]">
@@ -91,7 +91,7 @@ export const ContactForm: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
                       Ihr vollständiger Name *
                     </label>
                     <input
@@ -100,12 +100,12 @@ export const ContactForm: React.FC = () => {
                       placeholder="z. B. Sabine Meyer"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#071B33] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
                       Telefonnummer für Rückruf *
                     </label>
                     <input
@@ -114,14 +114,14 @@ export const ContactForm: React.FC = () => {
                       placeholder="z. B. 0170 1234567"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#071B33] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
                       E-Mail Adresse (optional)
                     </label>
                     <input
@@ -129,18 +129,18 @@ export const ContactForm: React.FC = () => {
                       placeholder="name@beispiel.de"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#071B33] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
                       Gewünschte Behandlung
                     </label>
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#071B33] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
                     >
                       <option value="Damen: Schnitt & Styling">Damen: Schnitt &amp; Styling</option>
                       <option value="Aveda Pflanzenfarbe & Balayage">Aveda Pflanzenfarbe &amp; Balayage</option>
@@ -154,13 +154,13 @@ export const ContactForm: React.FC = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
                       Bevorzugte Tage
                     </label>
                     <select
                       value={formData.day}
                       onChange={(e) => setFormData({ ...formData, day: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#071B33] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
                     >
                       <option value="Dienstag / Mittwoch">Dienstag / Mittwoch</option>
                       <option value="Donnerstag / Freitag">Donnerstag / Freitag</option>
@@ -170,13 +170,13 @@ export const ContactForm: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
                       Bevorzugte Uhrzeit
                     </label>
                     <select
                       value={formData.time}
                       onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#071B33] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
                     >
                       <option value="Vormittags (09:00 - 12:00)">Vormittags (09:00 - 12:00)</option>
                       <option value="Nachmittags (13:00 - 16:00)">Nachmittags (13:00 - 16:00)</option>
@@ -187,7 +187,7 @@ export const ContactForm: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#071B33] uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
                     Ihre Nachricht oder Wünsche (optional)
                   </label>
                   <textarea
@@ -195,13 +195,13 @@ export const ContactForm: React.FC = () => {
                     placeholder="Besondere Haarwünsche, Farbvorstellungen oder Fragen..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#071B33] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#071B33] hover:bg-[#102A4C] text-white font-bold text-base rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg"
+                  className="w-full py-4 bg-[#0A0A0C] hover:bg-[#222226] text-white font-bold text-base rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   <Send className="w-4 h-4 text-[#D4AF37]" />
                   <span>Unverbindliche Terminanfrage absenden</span>

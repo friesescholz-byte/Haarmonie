@@ -6,7 +6,7 @@ export const Footer: React.FC = () => {
   const [modalType, setModalType] = useState<'impressum' | 'datenschutz' | null>(null);
 
   return (
-    <footer className="bg-[#071B33] text-white pt-20 pb-12 border-t-2 border-[#C59A44]/40 relative overflow-hidden">
+    <footer className="bg-[#0A0A0C] text-white pt-20 pb-12 border-t-2 border-[#C59A44]/40 relative overflow-hidden">
       
       {/* Subtle ambient light glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#C59A44]/5 rounded-full blur-3xl pointer-events-none" />
@@ -185,7 +185,7 @@ export const Footer: React.FC = () => {
 
             {modalType === 'impressum' && (
               <div className="space-y-4 text-xs sm:text-sm text-left">
-                <h3 className="text-2xl font-heading font-bold text-[#071B33]">Impressum</h3>
+                <h3 className="text-2xl font-heading font-bold text-[#0A0A0C]">Impressum</h3>
                 <p><strong>Angaben gemäß § 5 TMG:</strong></p>
                 <p>
                   Haarmonie Matthias Zahn<br />
@@ -207,7 +207,7 @@ export const Footer: React.FC = () => {
 
             {modalType === 'datenschutz' && (
               <div className="space-y-4 text-xs sm:text-sm text-left">
-                <h3 className="text-2xl font-heading font-bold text-[#071B33]">Datenschutzerklärung</h3>
+                <h3 className="text-2xl font-heading font-bold text-[#0A0A0C]">Datenschutzerklärung</h3>
                 <p>
                   Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (DSGVO).
                 </p>

@@ -25,7 +25,7 @@ export const AvedaRitual: React.FC = () => {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C59A44] block mb-2">
             Bei jedem Besuch inklusive
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#071B33]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#0A0A0C]">
             Das Aveda Sinnes-Ritual.
           </h2>
         </div>
@@ -36,7 +36,7 @@ export const AvedaRitual: React.FC = () => {
               <span className="text-xs font-bold text-[#C59A44] uppercase tracking-wider">
                 0{i + 1}
               </span>
-              <h3 className="font-serif font-bold text-xl text-[#071B33]">
+              <h3 className="font-serif font-bold text-xl text-[#0A0A0C]">
                 {r.title}
               </h3>
               <p className="text-sm text-[#556375] leading-relaxed">
