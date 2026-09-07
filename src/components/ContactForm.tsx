@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { Phone, Calendar, Clock, User, Mail, MessageSquare, CheckCircle2, Sparkles, Send } from 'lucide-react';
 import { SALON_DATA } from '../data/content';
+import { Calendar, CheckCircle2, User, Phone, Mail, Clock, MessageSquare } from 'lucide-react';
 
 export const ContactForm: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    service: 'Damen: Schnitt & Styling',
-    day: 'Dienstag / Mittwoch',
-    time: 'Vormittags (09:00 - 12:00)',
+    service: 'Haarschnitt & Styling',
+    preferredDay: 'Dienstag - Freitag',
+    preferredTime: 'Vormittags (09:00 - 12:00)',
     message: ''
   });
+
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,201 +21,173 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-[#FAF8F5] relative overflow-hidden" id="termin">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="py-24 sm:py-32 bg-white relative" id="termin">
+      <div className="max-w-4xl mx-auto px-6 lg:px-12">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
-          {/* Left Text */}
-          <div className="lg:col-span-5 space-y-6">
-            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] block">
-              Terminvereinbarung
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-[#0A0A0C] leading-tight">
-              Wunschtermin ganz einfach anfragen.
-            </h2>
-            <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-              Senden Sie uns hier bequem Ihre Wunschzeiten oder rufen Sie uns direkt im Salon an. Wir melden uns umgehend bei Ihnen zurück!
-            </p>
+        {/* Title */}
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-zinc-600 bg-zinc-100 border border-zinc-200 px-3.5 py-1 rounded-full">
+            Online-Anfrage
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-black">
+            Termin vereinbaren.
+          </h2>
+          <p className="text-base sm:text-lg text-zinc-600 font-normal">
+            Senden Sie uns Ihren Wunschtermin. Wir bestätigen Ihre Reservierung telefonisch oder per E-Mail.
+          </p>
+        </div>
 
-            <div className="p-6 bg-white border border-[#EAE6DF] rounded-2xl shadow-sm space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#FAF3E0] flex items-center justify-center text-[#C59A44]">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs text-[#718096] uppercase font-semibold block">Direkt anrufen</span>
-                  <a
-                    href={`tel:${SALON_DATA.phoneClean}`}
-                    className="text-xl font-heading font-bold text-[#0A0A0C] hover:text-[#C59A44] transition-colors"
-                  >
-                    {SALON_DATA.phone}
-                  </a>
-                </div>
-              </div>
-              <p className="text-xs text-[#718096] leading-relaxed border-t border-slate-100 pt-3">
-                💡 <strong>Tipp:</strong> Vormittags zwischen 09:00 und 11:30 Uhr ist Friseurmeister Matthias Zahn besonders entspannt telefonisch erreichbar.
-              </p>
+        {submitted ? (
+          <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 sm:p-12 text-center space-y-4 animate-fadeIn shadow-clean">
+            <CheckCircle2 className="w-14 h-14 text-black mx-auto" />
+            <h3 className="text-2xl font-heading font-bold text-black">
+              Vielen Dank für Ihre Anfrage!
+            </h3>
+            <p className="text-zinc-600 max-w-md mx-auto">
+              Wir haben Ihre Daten erhalten und melden uns zeitnah persönlich bei Ihnen, um Ihren Wunschtermin zu bestätigen.
+            </p>
+            <div className="pt-4">
+              <button
+                onClick={() => setSubmitted(false)}
+                className="text-sm font-bold text-black hover:underline"
+              >
+                Weitere Anfrage senden
+              </button>
             </div>
           </div>
-
-          {/* Right Form */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-[#EAE6DF] shadow-lux-lg">
-            {submitted ? (
-              <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="bg-zinc-50/70 border border-zinc-200 rounded-3xl p-6 sm:p-10 shadow-clean space-y-6 text-left"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-zinc-700 block">
+                  Name *
+                </label>
+                <div className="relative">
+                  <User className="w-4 h-4 text-zinc-400 absolute left-4 top-3.5" />
+                  <input
+                    type="text"
+                    required
+                    placeholder="Ihr vollständiger Name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-black transition-colors text-black"
+                  />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-[#0A0A0C]">
-                  Vielen Dank für Ihre Anfrage!
-                </h3>
-                <p className="text-slate-600 text-base max-w-md mx-auto">
-                  Wir haben Ihre Terminanfrage erhalten und melden uns schnellstmöglich telefonisch bei Ihnen, um Ihren Wunschtermin zu bestätigen.
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="inline-block mt-4 text-xs font-bold uppercase tracking-wider text-[#C59A44] hover:underline"
-                >
-                  Neue Anfrage senden
-                </button>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <h3 className="text-2xl font-heading font-bold text-[#0A0A0C] mb-1">
-                    Terminanfrage senden
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#718096]">
-                    Füllen Sie kurz das Formular aus – wir stimmen den Termin persönlich mit Ihnen ab.
-                  </p>
+
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-zinc-700 block">
+                  Telefonnummer *
+                </label>
+                <div className="relative">
+                  <Phone className="w-4 h-4 text-zinc-400 absolute left-4 top-3.5" />
+                  <input
+                    type="tel"
+                    required
+                    placeholder="Für Rückfragen & Bestätigung"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-black transition-colors text-black"
+                  />
                 </div>
+              </div>
+            </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
-                      Ihr vollständiger Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="z. B. Sabine Meyer"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
-                      Telefonnummer für Rückruf *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="z. B. 0170 1234567"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
-                    />
-                  </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-zinc-700 block">
+                  E-Mail-Adresse
+                </label>
+                <div className="relative">
+                  <Mail className="w-4 h-4 text-zinc-400 absolute left-4 top-3.5" />
+                  <input
+                    type="email"
+                    placeholder="ihre.email@beispiel.de"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-black transition-colors text-black"
+                  />
                 </div>
+              </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
-                      E-Mail Adresse (optional)
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="name@beispiel.de"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
-                      Gewünschte Behandlung
-                    </label>
-                    <select
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
-                    >
-                      <option value="Damen: Schnitt & Styling">Damen: Schnitt &amp; Styling</option>
-                      <option value="Aveda Pflanzenfarbe & Balayage">Aveda Pflanzenfarbe &amp; Balayage</option>
-                      <option value="Festliche Hochsteckfrisur / Brautstyling">Festliche Hochsteckfrisur / Brautstyling</option>
-                      <option value="Botanical Hair Spa Pflege">Botanical Hair Spa Pflege</option>
-                      <option value="Herren: Meisterhaarschnitt & Bart">Herren: Meisterhaarschnitt &amp; Bart</option>
-                      <option value="Sonstiges">Sonstiges / Individuelle Beratung</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
-                      Bevorzugte Tage
-                    </label>
-                    <select
-                      value={formData.day}
-                      onChange={(e) => setFormData({ ...formData, day: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
-                    >
-                      <option value="Dienstag / Mittwoch">Dienstag / Mittwoch</option>
-                      <option value="Donnerstag / Freitag">Donnerstag / Freitag</option>
-                      <option value="Samstag Vormittag">Samstag Vormittag</option>
-                      <option value="Flexibel">Ganz flexibel</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
-                      Bevorzugte Uhrzeit
-                    </label>
-                    <select
-                      value={formData.time}
-                      onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
-                    >
-                      <option value="Vormittags (09:00 - 12:00)">Vormittags (09:00 - 12:00)</option>
-                      <option value="Nachmittags (13:00 - 16:00)">Nachmittags (13:00 - 16:00)</option>
-                      <option value="Spätnachmittag (16:00 - 18:00)">Spätnachmittag (16:00 - 18:00)</option>
-                      <option value="Flexibel">Flexibel</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-[#0A0A0C] uppercase tracking-wider mb-2">
-                    Ihre Nachricht oder Wünsche (optional)
-                  </label>
-                  <textarea
-                    rows={3}
-                    placeholder="Besondere Haarwünsche, Farbvorstellungen oder Fragen..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#FAF8F5] border border-[#EAE6DF] text-sm text-[#0A0A0C] focus:outline-none focus:border-[#C59A44] focus:bg-white transition-all"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-4 bg-[#0A0A0C] hover:bg-[#222226] text-white font-bold text-base rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-md hover:shadow-lg"
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-zinc-700 block">
+                  Gewünschte Leistung
+                </label>
+                <select
+                  value={formData.service}
+                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-black transition-colors text-black"
                 >
-                  <Send className="w-4 h-4 text-[#D4AF37]" />
-                  <span>Unverbindliche Terminanfrage absenden</span>
-                </button>
+                  <option>Damen Haarschnitt &amp; Styling</option>
+                  <option>Damen Coloration / Balayage</option>
+                  <option>Herren Haarschnitt &amp; Styling</option>
+                  <option>Bart- &amp; Konturenservice</option>
+                  <option>Botanical Hair Spa Pflege</option>
+                </select>
+              </div>
+            </div>
 
-                <p className="text-[11px] text-center text-[#718096]">
-                  🔒 Ihre Daten werden streng vertraulich ausschließlich zur Kontaktaufnahme genutzt.
-                </p>
-              </form>
-            )}
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-zinc-700 block">
+                  Bevorzugter Wochentag
+                </label>
+                <select
+                  value={formData.preferredDay}
+                  onChange={(e) => setFormData({ ...formData, preferredDay: e.target.value })}
+                  className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-black transition-colors text-black"
+                >
+                  <option>Dienstag</option>
+                  <option>Mittwoch</option>
+                  <option>Donnerstag</option>
+                  <option>Freitag</option>
+                  <option>Samstag</option>
+                </select>
+              </div>
 
-        </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-zinc-700 block">
+                  Bevorzugte Uhrzeit
+                </label>
+                <select
+                  value={formData.preferredTime}
+                  onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                  className="w-full px-4 py-3 bg-white border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-black transition-colors text-black"
+                >
+                  <option>Vormittags (09:00 - 12:00 Uhr)</option>
+                  <option>Mittags (12:00 - 15:00 Uhr)</option>
+                  <option>Nachmittags (15:00 - 18:00 Uhr)</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-xs font-bold uppercase tracking-wider text-zinc-700 block">
+                Nachricht oder individuelle Wünsche (optional)
+              </label>
+              <textarea
+                rows={3}
+                placeholder="Haben Sie besondere Wünsche oder Fragen zu Ihrem Besuch?"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="w-full p-4 bg-white border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-black transition-colors text-black"
+              />
+            </div>
+
+            <div className="pt-2">
+              <button
+                type="submit"
+                className="w-full py-4 bg-black hover:bg-zinc-800 text-white font-bold text-sm uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg"
+              >
+                Terminanfrage absenden
+              </button>
+            </div>
+          </form>
+        )}
 
       </div>
     </section>

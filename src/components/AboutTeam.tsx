@@ -1,79 +1,111 @@
 import React from 'react';
+import { Calendar, Phone, UserCheck, Scissors, Leaf } from 'lucide-react';
 import { SALON_DATA } from '../data/content';
-import { CheckCircle2, Calendar } from 'lucide-react';
 
 export const AboutTeam: React.FC = () => {
   return (
     <section className="py-24 sm:py-32 bg-white relative overflow-hidden" id="ueber-uns">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16 sm:space-y-20">
+        
+        {/* 1. Header & Story */}
+        <div className="max-w-3xl space-y-5 text-left">
+          <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500 bg-zinc-100 border border-zinc-200 px-3.5 py-1 rounded-full">
+            Über uns &bull; Matthias Zahn &amp; Team
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-black leading-[1.15] tracking-tight">
+            „Wir nehmen uns Zeit für das Wesentliche: Ihr Haar.“
+          </h2>
+          <p className="text-lg text-zinc-600 leading-relaxed font-normal pt-1">
+            Bei Haarmonie empfängt Sie ein eingespieltes, herzliches Team rund um Friseurmeister Matthias Zahn. Wir verbinden über 25 Jahre Meisterkompetenz mit moderner Schnitt- und Farbästhetik – ohne Hektik und ohne wechselnde Gesichter.
+          </p>
+        </div>
+
+        {/* 2. Drei dezente Säulen: OHNE Kacheln, OHNE 01/02/03, mit edlen Icons */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 text-left pt-2">
           
-          {/* Left Column: Prominent, Large Salon/Team Image (6 cols) */}
-          <div className="lg:col-span-6">
-            <div className="rounded-3xl overflow-hidden shadow-2xl bg-[#FAF8F5] aspect-[4/3] sm:aspect-[16/12] lg:aspect-[5/4] border border-[#EAE6DF] group relative">
-              <img
-                src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Salon/Haarmonie02.webp"
-                alt="Salon Haarmonie Matthias Zahn Nienburg"
-                className="w-full h-full object-cover object-center transform group-hover:scale-103 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          {/* Säule 1: Feste Vertrauenspersonen */}
+          <div className="space-y-3.5">
+            <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-black">
+              <UserCheck className="w-5 h-5" strokeWidth={1.5} />
             </div>
+            <h3 className="font-heading font-bold text-lg sm:text-xl text-black">
+              Feste Vertrauenspersonen
+            </h3>
+            <p className="text-sm text-zinc-600 leading-relaxed font-normal">
+              Kontinuität und persönlicher Bezug statt ständiger Personalwechsel. Ihr Friseur kennt Ihre Wünsche und Ihr Haar.
+            </p>
           </div>
 
-          {/* Right Column: Generous, High-End Copy (6 cols) */}
-          <div className="lg:col-span-6 space-y-6 text-left">
-            <div className="space-y-3">
-              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] bg-[#FAF3E0] border border-[#C59A44]/30 px-3.5 py-1 rounded-full font-heading">
-                Über uns &bull; Matthias Zahn &amp; Team
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-heading font-bold text-[#0A0A0C] leading-[1.15]">
-                „Wir nehmen uns echte Zeit für Sie und Ihr Haar.“
-              </h2>
+          {/* Säule 2: Individuelle Typ-Diagnostik */}
+          <div className="space-y-3.5">
+            <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-black">
+              <Scissors className="w-5 h-5" strokeWidth={1.5} />
             </div>
-
-            <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed font-normal">
-              Bei Haarmonie empfängt Sie ein eingespieltes, herzliches Team rund um Friseurmeister Matthias Zahn. Wir glauben daran, dass ein gelungener Friseurbesuch auf <strong>Zuhören, ehrlicher Typberatung und handwerklicher Perfektion</strong> beruht – ohne Hektik und ohne wechselnde Gesichter.
+            <h3 className="font-heading font-bold text-lg sm:text-xl text-black">
+              Individuelle Typ-Diagnostik
+            </h3>
+            <p className="text-sm text-zinc-600 leading-relaxed font-normal">
+              Schnitte und Nuancen, abgestimmt auf Ihre Gesichtsform, Ihren persönlichen Stil und Ihren Alltag.
             </p>
+          </div>
 
-            {/* 3 Core Trust Pillars */}
-            <div className="space-y-4 pt-1">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#C59A44] flex-shrink-0 mt-0.5" />
-                <span className="text-base text-[#2D3748]">
-                  <strong>Feste Vertrauenspersonen:</strong> Kontinuität und persönlicher Bezug statt ständiger Personalwechsel.
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#C59A44] flex-shrink-0 mt-0.5" />
-                <span className="text-base text-[#2D3748]">
-                  <strong>Individuelle Typ-Diagnostik:</strong> Schnitte und Nuancen, die zu Ihrer Gesichtsform und Ihrem Alltag passen.
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#C59A44] flex-shrink-0 mt-0.5" />
-                <span className="text-base text-[#2D3748]">
-                  <strong>100% Aveda Wohlfühl-Erlebnis:</strong> Reine Pflanzenpflege und aromatische Sinnesrituale bei jedem Besuch.
-                </span>
-              </div>
+          {/* Säule 3: Reine Pflanzenpflege */}
+          <div className="space-y-3.5">
+            <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-black">
+              <Leaf className="w-5 h-5" strokeWidth={1.5} />
             </div>
-
-            {/* Micro Call to Action */}
-            <div className="pt-3 flex flex-wrap items-center gap-4">
-              <a
-                href="#termin"
-                className="inline-flex items-center gap-2 bg-[#0A0A0C] hover:bg-[#222226] text-white px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 font-heading"
-              >
-                <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>Termin vereinbaren</span>
-              </a>
-              <span className="text-xs text-[#718096]">
-                Parkstraße 15, 31582 Nienburg
-              </span>
-            </div>
-
+            <h3 className="font-heading font-bold text-lg sm:text-xl text-black">
+              Reine Pflanzenpflege
+            </h3>
+            <p className="text-sm text-zinc-600 leading-relaxed font-normal">
+              Schonende Aveda-Pflanzenfarben und revitalisierende Tiefenpflege für gesundes, glanzvolles Haar.
+            </p>
           </div>
 
         </div>
+
+        {/* 3. Aufgeräumte Button- & Anruf-Zeile */}
+        <div className="flex flex-wrap items-center gap-6 pt-2">
+          <a
+            href="#termin"
+            className="inline-flex items-center gap-2.5 bg-black hover:bg-zinc-800 text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            <Calendar className="w-4 h-4" />
+            <span>Termin vereinbaren</span>
+          </a>
+
+          <div className="flex items-center gap-2 text-sm text-zinc-700">
+            <span>Oder direkt anrufen:</span>
+            <a
+              href={`tel:${SALON_DATA.phoneClean}`}
+              className="font-bold text-black hover:text-zinc-600 transition-colors inline-flex items-center gap-1.5 underline decoration-zinc-300 hover:decoration-black"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>{SALON_DATA.phone}</span>
+            </a>
+          </div>
+        </div>
+
+        {/* 4. Großes 16:9 Widescreen-Salon-Video */}
+        <div className="pt-4 max-w-5xl mx-auto">
+          <div className="aspect-video w-full rounded-3xl overflow-hidden shadow-2xl bg-black border border-zinc-200 relative group">
+            <video
+              src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Haarmonie-Video.mp4"
+              controls
+              playsInline
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-contain bg-black"
+            >
+              Ihr Browser unterstützt dieses Video nicht.
+            </video>
+          </div>
+          <span className="block text-center text-xs text-zinc-400 mt-4 font-medium">
+            Einblicke in den Salon &bull; Meister Matthias Zahn bei der Arbeit in der Parkstraße 15
+          </span>
+        </div>
+
       </div>
     </section>
   );

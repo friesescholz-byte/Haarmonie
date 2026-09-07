@@ -11,8 +11,8 @@ const HERO_IMAGES = [
   },
   {
     id: 2,
-    url: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Image01.webp",
-    alt: "Festfrisur Hochsteckkunst"
+    url: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Image12.webp",
+    alt: "Dimensionales Blond & Schnitt"
   },
   {
     id: 3,
@@ -25,7 +25,6 @@ export const Hero: React.FC = () => {
   const [activeIdx, setActiveIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Automatic smooth rotation every 5 seconds
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
@@ -39,18 +38,18 @@ export const Hero: React.FC = () => {
   const smallImage2 = HERO_IMAGES[(activeIdx + 2) % HERO_IMAGES.length];
 
   return (
-    <section className="relative pt-36 pb-24 sm:pt-44 sm:pb-32 lg:pt-48 lg:pb-36 overflow-hidden">
+    <section className="relative pt-40 pb-20 sm:pt-48 sm:pb-28 lg:pt-52 lg:pb-32 overflow-hidden bg-white">
       
-      {/* 1. FIXED (Parallax) Historic Salon Background Image */}
+      {/* Background Image: Haarmonie_05.webp deutlich sichtbarer (60% Opacity mit sanftem Verlauf) */}
       <div
         className="absolute inset-0 pointer-events-none z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-60 filter contrast-[1.12] saturate-[1.05]"
         style={{
-          backgroundImage: `url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Salon/Haarmonie01.webp')`,
+          backgroundImage: `url('https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/neu/Haarmonie_05.webp')`,
         }}
       />
-      {/* Soft gradient protection over the fixed background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#FAF8F5]/92 via-[#FAF8F5]/70 to-[#FAF8F5]/35 pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FAF8F5]/85 via-transparent to-[#FAF8F5]/95 pointer-events-none z-0" />
+      {/* Subtile, leichte Verläufe für perfekte Lesbarkeit des Texts links */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-white/30 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-transparent to-white pointer-events-none z-0" />
 
       {/* Hero Content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -59,73 +58,70 @@ export const Hero: React.FC = () => {
           {/* Left Text Column */}
           <div className="lg:col-span-6 space-y-8 text-left">
             <div className="space-y-4">
-              <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C59A44] bg-[#FAF3E0]/95 backdrop-blur-md border border-[#C59A44]/40 px-4 py-1.5 rounded-full shadow-xs">
+              <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-zinc-800 bg-white/90 backdrop-blur-md border border-zinc-200/80 px-4 py-1.5 rounded-full shadow-xs">
                 Friseurmeister Matthias Zahn &bull; Parkstraße 15
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-heading font-bold text-[#0A0A0C] leading-[1.14] tracking-tight">
-                Zeit für Sie. <br />
-                <span className="font-italic-serif text-[#C59A44] font-normal text-4xl sm:text-5xl lg:text-[60px] inline-block my-1">
-                  Im 100-jährigen
-                </span> <br />
-                Traditionshaus.
+              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-heading font-bold text-black leading-[1.12] tracking-tight">
+                Traditionelles Handwerk. <br />
+                <span className="text-zinc-600 font-normal">
+                  Zeitgemäße Ästhetik.
+                </span>
               </h1>
             </div>
 
-            <p className="text-lg sm:text-xl text-[#2D3748] leading-relaxed max-w-xl font-normal bg-[#FAF8F5]/75 backdrop-blur-xs p-3 rounded-2xl border border-white/60 shadow-xs">
-              Meisterhafte Schnittpräzision, typgerechte Beratung und ganzheitliche Aveda-Pflanzenpflege in ruhiger Altbau-Atmosphäre mitten in Nienburg.
+            <p className="text-lg sm:text-xl text-zinc-700 leading-relaxed max-w-xl font-normal bg-white/70 backdrop-blur-xs p-3 rounded-2xl border border-white/60">
+              Präzise Haarschnitte, typgerechte Coloration und ganzheitliche Pflanzenpflege in ruhiger Salon-Atmosphäre mitten in Nienburg.
             </p>
 
-            {/* 1 Button Layout with Phone Call Link stylishly underneath */}
+            {/* 1 Button Layout with Direct Phone Underneath */}
             <div className="space-y-4 pt-1">
               <div>
                 <a
                   href="#termin"
-                  className="inline-flex items-center justify-center gap-3 bg-[#0A0A0C] hover:bg-[#222226] text-white px-9 py-4 rounded-full font-bold text-base tracking-wide transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 group font-heading"
+                  className="inline-flex items-center justify-center gap-3 bg-black hover:bg-zinc-800 text-white px-9 py-4 rounded-full font-semibold text-base tracking-wide transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
                 >
-                  <Calendar className="w-5 h-5 text-[#D4AF37] group-hover:rotate-6 transition-transform" />
+                  <Calendar className="w-5 h-5" />
                   <span>Termin online anfragen</span>
                 </a>
               </div>
 
-              {/* Clean, readable direct call info underneath */}
-              <div className="flex items-center gap-2 text-sm text-[#4A5568]">
+              <div className="flex items-center gap-2 text-sm text-zinc-700">
                 <span>Oder direkt anrufen:</span>
                 <a
                   href={`tel:${SALON_DATA.phoneClean}`}
-                  className="font-bold text-[#0A0A0C] hover:text-[#C59A44] transition-colors inline-flex items-center gap-1.5 underline decoration-[#C59A44]/50 hover:decoration-[#C59A44]"
+                  className="font-bold text-black hover:text-zinc-600 transition-colors inline-flex items-center gap-1.5 underline decoration-zinc-400 hover:decoration-black"
                 >
-                  <Phone className="w-4 h-4 text-[#C59A44]" />
+                  <Phone className="w-4 h-4" />
                   <span>{SALON_DATA.phone}</span>
                 </a>
               </div>
             </div>
 
-            {/* Key Facts with Clickable Google Trust Link */}
-            <div className="pt-8 border-t border-[#EAE6DF]/80 grid grid-cols-3 gap-6 text-[#0A0A0C]">
+            {/* Key Facts */}
+            <div className="pt-8 border-t border-zinc-200/80 grid grid-cols-3 gap-6 text-black">
               <div>
-                <span className="block text-3xl font-heading font-bold text-[#0A0A0C]">25+</span>
-                <span className="text-xs sm:text-sm text-[#4A5568] uppercase tracking-wider font-semibold">Jahre Meister</span>
+                <span className="block text-3xl font-heading font-bold text-black">25+</span>
+                <span className="text-xs sm:text-sm text-zinc-600 uppercase tracking-wider font-semibold">Jahre Meister</span>
               </div>
               <div>
-                <span className="block text-3xl font-heading font-bold text-[#0A0A0C]">100+</span>
-                <span className="text-xs sm:text-sm text-[#4A5568] uppercase tracking-wider font-semibold">Jahre Haus</span>
+                <span className="block text-3xl font-heading font-bold text-black">100+</span>
+                <span className="text-xs sm:text-sm text-zinc-600 uppercase tracking-wider font-semibold">Jahre Haus</span>
               </div>
               
-              {/* Clickable 4.8 Google Trust Link */}
               <a
                 href={SALON_DATA.googleReviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block hover:-translate-y-0.5 transition-transform"
-                title="Google Bewertungen ansehen oder schreiben (öffnet in neuem Tab)"
+                title="Google Bewertungen ansehen"
               >
                 <div className="flex items-center gap-1">
-                  <span className="block text-3xl font-heading font-bold text-[#C59A44] group-hover:underline">
+                  <span className="block text-3xl font-heading font-bold text-black group-hover:underline">
                     4.8 ★
                   </span>
-                  <ArrowUpRight className="w-4 h-4 text-[#C59A44] opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                  <ArrowUpRight className="w-4 h-4 text-zinc-600 opacity-70 group-hover:opacity-100 transition-all" />
                 </div>
-                <span className="text-xs sm:text-sm text-[#4A5568] group-hover:text-[#0A0A0C] uppercase tracking-wider font-semibold block transition-colors">
+                <span className="text-xs sm:text-sm text-zinc-600 group-hover:text-black uppercase tracking-wider font-semibold block transition-colors">
                   Google Trust
                 </span>
               </a>
@@ -133,7 +129,7 @@ export const Hero: React.FC = () => {
 
           </div>
 
-          {/* Right Images: Silky Smooth Simultaneous Crossfade */}
+          {/* Right Images */}
           <div
             className="lg:col-span-6 relative select-none"
             onMouseEnter={() => setIsPaused(true)}
@@ -142,7 +138,7 @@ export const Hero: React.FC = () => {
             <div className="grid grid-cols-12 gap-4 sm:gap-6 items-center">
               
               {/* PRIMARY LARGE IMAGE (8 cols) */}
-              <div className="col-span-8 rounded-3xl overflow-hidden shadow-2xl bg-[#FAF8F5] aspect-[3/4] relative border border-white/80">
+              <div className="col-span-8 rounded-3xl overflow-hidden shadow-clean-lg bg-zinc-100 aspect-[3/4] relative border border-zinc-200">
                 <AnimatePresence initial={false}>
                   <motion.img
                     key={largeImage.id}
@@ -151,7 +147,7 @@ export const Hero: React.FC = () => {
                     initial={{ opacity: 0, scale: 1.02 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
+                    transition={{ duration: 1.0, ease: [0.25, 1, 0.5, 1] }}
                     className="w-full h-full object-cover object-center absolute inset-0"
                   />
                 </AnimatePresence>
@@ -163,7 +159,7 @@ export const Hero: React.FC = () => {
                 {/* Small Image 1 */}
                 <div
                   onClick={() => setActiveIdx((activeIdx + 1) % HERO_IMAGES.length)}
-                  className="rounded-2xl overflow-hidden shadow-lg bg-[#FAF8F5] aspect-[3/4] cursor-pointer relative border border-white/80 hover:border-[#C59A44] transition-all duration-300 hover:scale-[1.03]"
+                  className="rounded-2xl overflow-hidden shadow-clean bg-zinc-100 aspect-[3/4] cursor-pointer relative border border-zinc-200 hover:border-black transition-all duration-300 hover:scale-[1.02]"
                 >
                   <AnimatePresence initial={false}>
                     <motion.img
@@ -173,7 +169,7 @@ export const Hero: React.FC = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.9, ease: "easeInOut" }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
                       className="w-full h-full object-cover object-center absolute inset-0"
                     />
                   </AnimatePresence>
@@ -182,7 +178,7 @@ export const Hero: React.FC = () => {
                 {/* Small Image 2 */}
                 <div
                   onClick={() => setActiveIdx((activeIdx + 2) % HERO_IMAGES.length)}
-                  className="rounded-2xl overflow-hidden shadow-lg bg-[#FAF8F5] aspect-[3/4] cursor-pointer relative border border-white/80 hover:border-[#C59A44] transition-all duration-300 hover:scale-[1.03]"
+                  className="rounded-2xl overflow-hidden shadow-clean bg-zinc-100 aspect-[3/4] cursor-pointer relative border border-zinc-200 hover:border-black transition-all duration-300 hover:scale-[1.02]"
                 >
                   <AnimatePresence initial={false}>
                     <motion.img
@@ -192,7 +188,7 @@ export const Hero: React.FC = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.9, ease: "easeInOut" }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
                       className="w-full h-full object-cover object-center absolute inset-0"
                     />
                   </AnimatePresence>
@@ -204,91 +200,6 @@ export const Hero: React.FC = () => {
           </div>
 
         </div>
-      </div>
-
-      {/* 2. Seamless Organic Curved Transition with Interwoven Gold & Black Hair Strands */}
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
-        
-        <svg
-          className="relative block w-full h-20 sm:h-28 lg:h-36"
-          viewBox="0 0 1440 120"
-          fill="none"
-          preserveAspectRatio="none"
-        >
-          {/* Main White Organic Wave Fill */}
-          <path
-            d="M0,40 C320,110 480,10 720,55 C960,100 1180,20 1440,50 L1440,120 L0,120 Z"
-            fill="#FFFFFF"
-          />
-
-          {/* 1. Primary Golden Hair Wave Line */}
-          <path
-            d="M0,40 C320,110 480,10 720,55 C960,100 1180,20 1440,50"
-            stroke="url(#hairGold1)"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-          />
-
-          {/* 2. Interwoven Gold-to-Black Gradient Curve */}
-          <path
-            d="M0,32 C280,102 510,8 770,60 C1030,110 1220,18 1440,42"
-            stroke="url(#goldDarkGrad)"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-          />
-
-          {/* 3. Subtle Black/Charcoal Hair Strand (Dashed) */}
-          <path
-            d="M0,25 C260,95 540,5 820,70 C1100,120 1260,15 1440,35"
-            stroke="url(#hairBlack1)"
-            strokeWidth="1.2"
-            strokeDasharray="6 3"
-          />
-
-          {/* 4. Fine Delicate Dark Charcoal Flowing Line */}
-          <path
-            d="M0,50 C360,118 600,20 920,48 C1140,65 1320,25 1440,60"
-            stroke="#0A0A0C"
-            strokeWidth="0.9"
-            strokeOpacity="0.4"
-          />
-
-          {/* 5. Extra Soft Black Accent Whisper Curve */}
-          <path
-            d="M0,60 C400,125 650,30 960,40 C1180,55 1360,35 1440,70"
-            stroke="#0A0A0C"
-            strokeWidth="0.6"
-            strokeOpacity="0.25"
-          />
-
-          {/* Gradients */}
-          <defs>
-            {/* Rich Gold Gradient */}
-            <linearGradient id="hairGold1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#C59A44" stopOpacity="0.2" />
-              <stop offset="30%" stopColor="#D4AF37" stopOpacity="0.9" />
-              <stop offset="60%" stopColor="#F5D77F" stopOpacity="1" />
-              <stop offset="85%" stopColor="#C59A44" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#C59A44" stopOpacity="0.2" />
-            </linearGradient>
-
-            {/* Gold to Deep Black Gradient */}
-            <linearGradient id="goldDarkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#C59A44" stopOpacity="0.1" />
-              <stop offset="35%" stopColor="#D4AF37" stopOpacity="0.8" />
-              <stop offset="65%" stopColor="#0A0A0C" stopOpacity="0.75" />
-              <stop offset="100%" stopColor="#0A0A0C" stopOpacity="0.1" />
-            </linearGradient>
-
-            {/* Pure Smoky Black Gradient */}
-            <linearGradient id="hairBlack1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#0A0A0C" stopOpacity="0.1" />
-              <stop offset="50%" stopColor="#0A0A0C" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#0A0A0C" stopOpacity="0.1" />
-            </linearGradient>
-          </defs>
-        </svg>
-
       </div>
 
     </section>
