@@ -15,7 +15,6 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { label: 'Über uns', href: '#ueber-uns' },
     { label: 'Partner', href: '#partner' },
-    { label: 'Transformationen', href: '#transformationen' },
     { label: 'Schnitt & Farbe', href: '#frisuren' },
     { label: 'Salon', href: '#tradition' },
     { label: 'Kontakt & Anfahrt', href: '#kontakt' },
@@ -26,12 +25,12 @@ export const Navbar: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-zinc-200'
-          : 'bg-white/90 backdrop-blur-sm py-6 border-b border-zinc-100'
+          : 'bg-white/90 backdrop-blur-sm py-5 border-b border-zinc-100'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
         
-        {/* Significantly Larger, Prominent Logo */}
+        {/* Prominentes Logo */}
         <a href="#" className="flex-shrink-0 flex items-center pr-6 group">
           <img
             src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Haarmonie_Logo_transparent_ergebnis.webp"
@@ -40,24 +39,24 @@ export const Navbar: React.FC = () => {
           />
         </a>
 
-        {/* Clean, Monochromatic Desktop Links */}
-        <nav className="hidden lg:flex items-center gap-7 xl:gap-9 text-[15px] font-medium text-zinc-700">
+        {/* Clean Desktop Links */}
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-9 text-[14px] font-medium text-zinc-700 uppercase tracking-wider">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="hover:text-black transition-colors tracking-normal whitespace-nowrap py-1"
+              className="hover:text-black transition-colors py-1"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Spacious Monochromatic CTA */}
-        <div className="hidden md:flex items-center gap-4 pl-4 flex-shrink-0">
+        {/* Eckige CTA-Buttons (rounded-none) */}
+        <div className="hidden md:flex items-center gap-3 pl-4 flex-shrink-0">
           <a
             href="#termin"
-            className="inline-flex items-center gap-2 bg-black hover:bg-zinc-800 text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm hover:shadow whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-black hover:bg-zinc-800 text-white px-6 py-3 rounded-none text-xs font-bold uppercase tracking-widest transition-all border border-black"
           >
             <Calendar className="w-3.5 h-3.5" />
             <span>Termin anfragen</span>
@@ -65,7 +64,7 @@ export const Navbar: React.FC = () => {
 
           <a
             href={`tel:${SALON_DATA.phoneClean}`}
-            className="inline-flex items-center gap-2 text-zinc-900 hover:text-zinc-600 px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase transition-colors whitespace-nowrap border border-zinc-200"
+            className="inline-flex items-center gap-2 text-zinc-900 hover:text-black px-4 py-3 rounded-none text-xs font-bold tracking-widest uppercase transition-colors border border-zinc-300 hover:border-black"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>{SALON_DATA.phone}</span>
@@ -75,7 +74,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-black"
+          className="lg:hidden p-2 text-black rounded-none"
           aria-label="Menü"
         >
           {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -84,13 +83,13 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-zinc-200 px-6 py-6 space-y-4 shadow-2xl animate-fadeIn">
+        <div className="lg:hidden bg-white border-b border-zinc-200 px-6 py-6 space-y-4 shadow-2xl animate-fadeIn rounded-none">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-lg font-medium text-zinc-900 hover:text-black py-1.5"
+              className="block text-base font-medium text-zinc-900 hover:text-black py-1.5 uppercase tracking-wider"
             >
               {link.label}
             </a>
@@ -99,14 +98,14 @@ export const Navbar: React.FC = () => {
             <a
               href="#termin"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3.5 bg-black text-white rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2 shadow"
+              className="w-full py-3.5 bg-black text-white rounded-none text-center text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               <span>Termin online anfragen</span>
             </a>
             <a
               href={`tel:${SALON_DATA.phoneClean}`}
-              className="w-full py-3 bg-zinc-100 text-zinc-900 rounded-xl text-center text-sm font-bold flex items-center justify-center gap-2 border border-zinc-200"
+              className="w-full py-3 bg-white text-zinc-900 rounded-none text-center text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 border border-zinc-300"
             >
               <Phone className="w-4 h-4" />
               <span>{SALON_DATA.phone}</span>

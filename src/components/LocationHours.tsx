@@ -1,20 +1,25 @@
 import React from 'react';
 import { SALON_DATA } from '../data/content';
 import { Clock, MapPin, Phone } from 'lucide-react';
+import { VineClassic } from './BotanicalAccent';
 
 export const LocationHours: React.FC = () => {
   return (
-    <section className="py-20 sm:py-28 bg-zinc-50/50 border-t border-zinc-200" id="kontakt">
+    <section className="py-20 sm:py-28 bg-zinc-50/60 border-t border-zinc-200" id="kontakt">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Info Column */}
           <div className="lg:col-span-6 space-y-8 text-left">
-            <div>
-              <span className="inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-zinc-600 bg-white border border-zinc-200 px-3.5 py-1 rounded-full mb-3">
+            <div className="relative">
+              {/* Beliebte Original-Pflanzenranke hinter "Besuchen Sie uns in Nienburg" */}
+              <div className="absolute -top-8 right-6 sm:right-16 pointer-events-none z-0 opacity-45 rotate-12 hidden sm:block">
+                <VineClassic className="w-24 sm:w-32 h-64 sm:h-80" />
+              </div>
+              <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-zinc-600 bg-white border border-zinc-300 px-3.5 py-1 rounded-none mb-3 relative z-10">
                 Standort &amp; Öffnungszeiten
               </span>
-              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-black leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-black leading-tight relative z-10">
                 Besuchen Sie uns in Nienburg.
               </h2>
             </div>
@@ -40,9 +45,9 @@ export const LocationHours: React.FC = () => {
               </div>
             </div>
 
-            {/* Opening Hours Table */}
-            <div className="bg-white rounded-2xl p-6 border border-zinc-200 shadow-clean max-w-md space-y-3">
-              <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-black flex items-center gap-2 pb-2 border-b border-zinc-100">
+            {/* Opening Hours Table - ECKIG */}
+            <div className="bg-white rounded-none p-6 border border-zinc-300 shadow-xs max-w-md space-y-3">
+              <h3 className="font-heading font-bold text-xs uppercase tracking-widest text-black flex items-center gap-2 pb-2 border-b border-zinc-100">
                 <Clock className="w-4 h-4 text-black" />
                 <span>Öffnungszeiten</span>
               </h3>
@@ -57,9 +62,9 @@ export const LocationHours: React.FC = () => {
             </div>
           </div>
 
-          {/* Map Column: Farbige Google Maps Karte ohne Grayscale */}
+          {/* Map Column - ECKIG */}
           <div className="lg:col-span-6">
-            <div className="rounded-3xl overflow-hidden shadow-clean-lg border border-zinc-200 aspect-[4/3] relative bg-zinc-100">
+            <div className="rounded-none overflow-hidden shadow-sm border border-zinc-300 aspect-[4/3] relative bg-zinc-100">
               <iframe
                 title="Salon Haarmonie Standort"
                 src="https://maps.google.com/maps?q=Parkstra%C3%9Fe%2015,%2031582%20Nienburg&t=&z=15&ie=UTF8&iwloc=&output=embed"

@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { PartnerBrands } from './components/PartnerBrands';
 import { AboutTeam } from './components/AboutTeam';
-import { BeforeAfterShowcase } from './components/BeforeAfterShowcase';
 import { DamenStylesShowcase } from './components/DamenStylesShowcase';
 import { TraditionStory } from './components/TraditionStory';
 import { ContactForm } from './components/ContactForm';
@@ -49,28 +48,25 @@ export function App() {
     <div className="min-h-screen bg-white text-zinc-900 font-sans selection:bg-black selection:text-white">
       <Navbar />
       <main>
-        {/* 1. Hero mit Haarmonie_05.webp & fokussierter Headline */}
+        {/* 1. Hero mit neuem Slogan & eckigem Design */}
         <Hero />
 
-        {/* 2. Partner & Brands Logo-Wall */}
+        {/* 2. Partner & Brands Logo-Wall mit transparenten Logos */}
         <PartnerBrands />
 
-        {/* 3. Über uns mit großem 16:9 Salon-Video */}
+        {/* 3. Über uns mit dezenten Icons, eckigem Widescreen-Video & ohne Kacheln */}
         <AboutTeam />
 
-        {/* 4. Vorher/Nachher Transformationen */}
-        <BeforeAfterShowcase />
-
-        {/* 5. Damen- & Herren-Katalog (Headlines einzeilig, angebunden an Admin-Store) */}
+        {/* 4. Damen- & Herren-Katalog (100% Eckig, einzeilige Headlines) */}
         <DamenStylesShowcase />
 
-        {/* 6. Traditionshaus Statement (Haarmonie_05.webp im Hintergrund sichtbar) */}
+        {/* 5. Traditionshaus Statement (Haarmonie_05.webp sichtbar im Hintergrund) */}
         <TraditionStory />
 
-        {/* 7. Kontakt- & Terminformular */}
+        {/* 6. Kontakt- & Terminformular (100% Eckig) */}
         <ContactForm />
 
-        {/* 8. Öffnungszeiten, Standort & farbige Google Maps */}
+        {/* 7. Öffnungszeiten, Standort & farbige Google Maps (100% Eckig) */}
         <LocationHours />
       </main>
       <Footer onOpenAdmin={openAdmin} />

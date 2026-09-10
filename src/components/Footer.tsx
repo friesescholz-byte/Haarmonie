@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
         {/* Main 4-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-zinc-800">
           
-          {/* Col 1: Brand & Significantly Larger Logo (5 cols) */}
+          {/* Col 1: Brand & Logo */}
           <div className="lg:col-span-5 space-y-5">
             <a href="#" className="inline-block group">
               <img
@@ -26,32 +26,31 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
               />
             </a>
             <p className="text-sm text-zinc-400 leading-relaxed max-w-md font-normal">
-              Traditionelle Friseurkunst trifft auf moderne Schnitte und zeitgemäße Ästhetik. Parkstraße 15, 31582 Nienburg/Weser.
+              Individuelle Schnittkunst mit Haltung und zeitgemäße Ästhetik. Parkstraße 15, 31582 Nienburg/Weser.
             </p>
-            <div className="flex items-center gap-4 text-xs text-zinc-400 font-semibold pt-1">
+            <div className="flex items-center gap-4 text-xs text-zinc-400 font-semibold pt-1 uppercase tracking-wider">
               <span>&bull; Friseurmeisterbetrieb</span>
-              <span>&bull; Aveda Exklusiv-Partner</span>
+              <span>&bull; Aveda Partner</span>
             </div>
           </div>
 
-          {/* Col 2: Navigation (2 cols) */}
+          {/* Col 2: Navigation - OHNE Transformationen */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-white">
+            <h4 className="font-heading font-bold text-xs uppercase tracking-widest text-white">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-xs text-zinc-400">
+            <ul className="space-y-2.5 text-xs text-zinc-400 uppercase tracking-wider">
               <li><a href="#ueber-uns" className="hover:text-white transition-colors">Über uns</a></li>
               <li><a href="#partner" className="hover:text-white transition-colors">Partner</a></li>
-              <li><a href="#transformationen" className="hover:text-white transition-colors">Transformationen</a></li>
               <li><a href="#frisuren" className="hover:text-white transition-colors">Schnitt &amp; Farbe</a></li>
               <li><a href="#tradition" className="hover:text-white transition-colors">Der Salon</a></li>
               <li><a href="#termin" className="hover:text-white transition-colors">Termin anfragen</a></li>
             </ul>
           </div>
 
-          {/* Col 3: Öffnungszeiten (2 cols) */}
+          {/* Col 3: Öffnungszeiten */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-white">
+            <h4 className="font-heading font-bold text-xs uppercase tracking-widest text-white">
               Öffnungszeiten
             </h4>
             <div className="space-y-2 text-xs text-zinc-400">
@@ -73,9 +72,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
             </p>
           </div>
 
-          {/* Col 4: Kontakt & Google Bewertung (3 cols) */}
+          {/* Col 4: Kontakt & Google Bewertung - ECKIG */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="font-heading font-bold text-sm uppercase tracking-wider text-white">
+            <h4 className="font-heading font-bold text-xs uppercase tracking-widest text-white">
               Kontakt
             </h4>
             <div className="space-y-2.5 text-xs text-zinc-400">
@@ -99,15 +98,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
               </a>
             </div>
 
-            {/* Authentic Google Review Card */}
+            {/* Google Review Card - ECKIG */}
             <div className="pt-2">
               <a
                 href={SALON_DATA.googleReviewLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 p-3.5 rounded-2xl transition-all group w-full shadow-xs hover:shadow-md"
+                className="inline-flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 p-3.5 rounded-none transition-all group w-full shadow-xs hover:shadow-md"
               >
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div className="w-10 h-10 rounded-none bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                     <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -179,19 +178,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
 
       </div>
 
-      {/* Legal Modals */}
+      {/* Legal Modals - ECKIG */}
       {modalType && (
         <div
           className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setModalType(null)}
         >
           <div
-            className="bg-white text-zinc-900 rounded-3xl max-w-xl w-full p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl"
+            className="bg-white text-zinc-900 rounded-none max-w-xl w-full p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl border border-zinc-200"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setModalType(null)}
-              className="absolute top-5 right-5 p-2 rounded-full hover:bg-zinc-100 text-zinc-500 hover:text-black"
+              className="absolute top-5 right-5 p-2 hover:bg-zinc-100 text-zinc-500 hover:text-black rounded-none"
             >
               <X className="w-5 h-5" />
             </button>
