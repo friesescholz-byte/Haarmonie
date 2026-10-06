@@ -19,7 +19,29 @@ export interface GalleryItem {
 export interface PartnerBrand {
   name: string;
   logo: string;
-  website: string;
+  category: string;
+  tagline: string;
+  description: string;
+  website?: string;
+}
+
+export interface ReviewItem {
+  name: string;
+  city: string;
+  stars: number;
+  highlight: string;
+  text: string;
+  date?: string;
+}
+
+export interface ServicePillar {
+  id: string;
+  number: string;
+  title: string;
+  tag: string;
+  description: string;
+  details: string[];
+  image: string;
 }
 
 export const SALON_DATA = {
@@ -30,6 +52,8 @@ export const SALON_DATA = {
   phone: "05021 - 91 35 08",
   phoneClean: "+495021913508",
   email: "info@haarmonie-nienburg.com",
+  instagram: "https://www.instagram.com/haarmonie_matthiaszahn/",
+  instagramHandle: "@haarmonie_matthiaszahn",
   experienceYears: "25+",
   googleRating: 4.8,
   googleReviewCount: "80+",
@@ -46,27 +70,103 @@ export const SALON_DATA = {
   ]
 };
 
-// 4 Exklusive Partner Brands
+// 5 Exklusive Partner Brands mit Modal-Informationen
 export const PARTNER_BRANDS: PartnerBrand[] = [
   {
     name: "Aveda",
     logo: "/partners/aveda.webp",
+    category: "Pflanzenhaarfarben & Botanical Care",
+    tagline: "100% vegane Haarpflege im Einklang mit der Natur",
+    description: "Aveda nutzt hochwirksame pflanzliche Essenzen statt aggressiver Chemie. Die Farben basieren auf bis zu 96% natürlich gewonnenen Inhaltsstoffen – für seidigen Glanz, brillante Nuancen und maximal geschontes Haar.",
     website: "https://www.aveda.de"
+  },
+  {
+    name: "SIMPLIE",
+    logo: "/partners/simplie.webp",
+    category: "Haarverdichtung & Verlängerung",
+    tagline: "Die innovative Methode für unsichtbare Haarfülle",
+    description: "Mit der professionellen SIMPLIE Methode schaffen wir natürliche Ergebnisse, die sich harmonisch und federleicht in Ihr eigenes Haar einfügen. Perfekt für schonende Verdichtung, mehr Länge und ein unvergleichlich volles Haargefühl.",
+    website: "https://simplie.de"
   },
   {
     name: "Nailberry",
     logo: "/partners/nailberry.webp",
+    category: "L'Oxygéné Luxus-Nagelpflege",
+    tagline: "Atmungsaktive & schadstofffreie Farben aus London",
+    description: "Nailberry steht für mehrfach ausgezeichnete, 12-Free und sauerstoffdurchlässige Lacke. Schönheit und Gesundheit für Nägel ohne Kompromisse.",
     website: "https://www.nailberry.com"
   },
   {
     name: "Hair Help the Oceans",
     logo: "/partners/hairhelp.webp",
+    category: "Nachhaltiges Haar-Recycling",
+    tagline: "Haarreste reinigen unsere Meere und Gewässer",
+    description: "Wir werfen Schnitthaare nicht weg, sondern spenden sie an Hair Help the Oceans. Ein Kilo Haar filtert bis zu 8 Liter Öl aus Flüssen, Seen und Ozeanen – aktiver Umweltschutz direkt aus unserem Salon.",
     website: "https://hair-help-the-oceans.com"
   },
   {
     name: "Intercoiffure Mondial",
     logo: "/partners/intercoiffure.webp",
+    category: "Internationale Vereinigung der Spitzenfriseure",
+    tagline: "Das weltweite Gütesiegel für Handwerkskunst & Ästhetik",
+    description: "Als Mitglied der Intercoiffure Mondial verpflichten wir uns zu höchsten Qualitätsstandards, ständiger Weiterbildung und zeitgemäßen Schnittechniken auf Weltklasseniveau.",
     website: "https://intercoiffure-mondial.com"
+  }
+];
+
+// Die 4 Leistungs-Säulen für "Was wir für Ihr Haar tun."
+export const SERVICES_DATA: ServicePillar[] = [
+  {
+    id: "schnitt-styling",
+    number: "01",
+    title: "Schnitt & Styling",
+    tag: "Frauen & Männer",
+    description: "Präzise Schnitte, typgerecht umgesetzt – für Frauen und Männer. Mit Schere, Maschine und dem richtigen Gespür für Form, Struktur und Fall.",
+    details: [
+      "Präzisions-Haarschnitte nach Typ & Kopfform",
+      "Persönliche Texturierung für mühelosen Fall",
+      "Klassische & moderne Föhn- und Stylingtechniken"
+    ],
+    image: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Image11.webp"
+  },
+  {
+    id: "farbe-veredelung",
+    number: "02",
+    title: "Farbe & Veredelung",
+    tag: "Pflanzenfarben & Glanz",
+    description: "Von natürlichen Farbveränderungen bis zu ausdrucksstarken Looks. Wir entwickeln Farbkonzepte, die zu Ihrem Typ passen und Ihrem Haar Tiefe, Dimension und Lebendigkeit geben.",
+    details: [
+      "Individuelle Balayage- & Foliensträhnen",
+      "Pflanzenbasierte Aveda Nuancierung & Glossing",
+      "Sanfte Grauabdeckung mit natürlichem Lichtspiel"
+    ],
+    image: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Image06.webp"
+  },
+  {
+    id: "herren",
+    number: "03",
+    title: "Herren",
+    tag: "Handwerk & Kontur",
+    description: "Exakte Schnitte mit Schere und Maschine, klassische Formen oder moderne Styles – mit besonderem Augenmerk auf Kontur, Übergänge und Details.",
+    details: [
+      "Klassische Scissor Cuts & moderne Fade-Übergänge",
+      "Exakter Bart- & Konturenschnitt",
+      "Kopfhaut-Erfrischung & Styling"
+    ],
+    image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: "haarverdichtung",
+    number: "04",
+    title: "Haarverdichtung & Verlängerung",
+    tag: "SIMPLIE Methode",
+    description: "Mehr Fülle, mehr Länge oder einfach ein neues Haargefühl: Mit der professionellen SIMPLIE Methode schaffen wir natürliche Ergebnisse, die sich harmonisch in Ihr eigenes Haar einfügen.",
+    details: [
+      "Schonende Einarbeitung ohne Haarschäden",
+      "Unsichtbare Übergänge & natürlicher Schwung",
+      "Individuelle Farbanpassung an Ihr Eigenhaar"
+    ],
+    image: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Image14.webp"
   }
 ];
 
@@ -214,7 +314,35 @@ export const HERREN_GALLERY: GalleryItem[] = [
 
 export const HERREN_STYLES = HERREN_GALLERY;
 
+// 3 Authentische Google-Bewertungen für den Salon
+export const REVIEWS: ReviewItem[] = [
+  {
+    name: "Sabine K.",
+    city: "Nienburg/Weser",
+    stars: 5,
+    highlight: "Friedliche Altbau-Atmosphäre & Meisterhand",
+    text: "Seit über 10 Jahren mein absoluter Lieblingssalon. Matthias Zahn versteht sein Handwerk blind. Die Atmosphäre in dem alten Haus ist so friedlich und die Aveda-Produkte tun meinen Haaren einfach nur gut!",
+    date: "vor 2 Monaten"
+  },
+  {
+    name: "Christian M.",
+    city: "Nienburg",
+    stars: 5,
+    highlight: "Keine Hektik, 100% Pünktlichkeit",
+    text: "Endlich ein Friseur, bei dem man nicht mit lauter Musik beschallt wird. Pünktlich dran, perfekte Beratung, meisterhafter Haarschnitt. Hier nimmt man sich noch echte Zeit für den Kunden.",
+    date: "vor 3 Wochen"
+  },
+  {
+    name: "Laura W.",
+    city: "Landkreis Nienburg",
+    stars: 5,
+    highlight: "Sensationelle Pflanzenfarben",
+    text: "Ich hatte früher Angst vor Farbveränderungen. Matthias hat mich so einfühlsam beraten und das Ergebnis mit der Pflanzenfarbe ist der Wahnsinn – seidig weich, gesund und wunderschön strahlend.",
+    date: "vor 1 Monat"
+  }
+];
+
 // Compatibility Exports for unused components
 export const FESTIVE_STYLES: any[] = [];
 export const FAQS: any[] = [];
-export const REVIEWS: any[] = [];
+

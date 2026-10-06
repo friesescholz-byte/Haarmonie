@@ -1,7 +1,6 @@
 import React from 'react';
 import { SALON_DATA } from '../data/content';
 import { Clock, MapPin, Phone } from 'lucide-react';
-import { VineClassic } from './BotanicalAccent';
 
 export const LocationHours: React.FC = () => {
   return (
@@ -12,10 +11,6 @@ export const LocationHours: React.FC = () => {
           {/* Info Column */}
           <div className="lg:col-span-6 space-y-8 text-left">
             <div className="relative">
-              {/* Beliebte Original-Pflanzenranke hinter "Besuchen Sie uns in Nienburg" */}
-              <div className="absolute -top-8 right-6 sm:right-16 pointer-events-none z-0 opacity-45 rotate-12 hidden sm:block">
-                <VineClassic className="w-24 sm:w-32 h-64 sm:h-80" />
-              </div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-zinc-600 bg-white border border-zinc-300 px-3.5 py-1 rounded-none mb-3 relative z-10">
                 Standort &amp; Öffnungszeiten
               </span>

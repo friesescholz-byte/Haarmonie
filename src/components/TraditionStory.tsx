@@ -1,7 +1,6 @@
 import React from 'react';
 import { Phone, Calendar } from 'lucide-react';
 import { SALON_DATA } from '../data/content';
-import { VineClassic } from './BotanicalAccent';
 
 export const TraditionStory: React.FC = () => {
   return (
@@ -16,11 +15,6 @@ export const TraditionStory: React.FC = () => {
       />
       {/* Weicher 55%-Overlay */}
       <div className="absolute inset-0 bg-black/55 backdrop-blur-[0.5px] pointer-events-none z-0" />
-
-      {/* Original-Pflanzenranke zart hinter dem Meister-Zitat zentriert */}
-      <div className="absolute top-16 left-1/2 -translate-x-1/2 pointer-events-none z-0 opacity-25 rotate-6">
-        <VineClassic className="w-36 sm:w-44 h-80 sm:h-[420px]" />
-      </div>
 
       <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center space-y-8 relative z-10">
         

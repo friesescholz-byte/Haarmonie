@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { PartnerBrands } from './components/PartnerBrands';
 import { AboutTeam } from './components/AboutTeam';
-import { DamenStylesShowcase } from './components/DamenStylesShowcase';
-import { TraditionStory } from './components/TraditionStory';
+import { ServicesSection } from './components/ServicesSection';
+import { ReviewsAndVideo } from './components/ReviewsAndVideo';
+import { InstagramFeed } from './components/InstagramFeed';
 import { ContactForm } from './components/ContactForm';
 import { LocationHours } from './components/LocationHours';
 import { Footer } from './components/Footer';
@@ -48,25 +48,25 @@ export function App() {
     <div className="min-h-screen bg-white text-zinc-900 font-sans selection:bg-black selection:text-white">
       <Navbar />
       <main>
-        {/* 1. Hero mit neuem Slogan & eckigem Design */}
+        {/* 1. Weymann-Style Hero mit Haus-Foto & Haarmonie-Farben */}
         <Hero />
 
-        {/* 2. Partner & Brands Logo-Wall mit transparenten Logos */}
-        <PartnerBrands />
-
-        {/* 3. Über uns mit dezenten Icons, eckigem Widescreen-Video & ohne Kacheln */}
+        {/* 2. Über uns – Frisurenbilder / Team mit Partner-Logos & Modal (inkl. SIMPLIE) */}
         <AboutTeam />
 
-        {/* 4. Damen- & Herren-Katalog (100% Eckig, einzeilige Headlines) */}
-        <DamenStylesShowcase />
+        {/* 4. Was wir für Ihr Haar tun (4 Kernleistungen: Schnitt & Styling, Farbe, Herren, Haarverdichtung) */}
+        <ServicesSection />
 
-        {/* 5. Traditionshaus Statement (Haarmonie_05.webp sichtbar im Hintergrund) */}
-        <TraditionStory />
+        {/* 5. Referenzen & Video (3 Google-Bewertungen + Video "Was für ein besonderer Tag!") */}
+        <ReviewsAndVideo />
 
-        {/* 6. Kontakt- & Terminformular (100% Eckig) */}
+        {/* 6. Haarmonie auf Instagram (6 Neueste Beiträge, Behold-ready) */}
+        <InstagramFeed />
+
+        {/* 7. Kontakt- & Terminformular (100% Eckig) */}
         <ContactForm />
 
-        {/* 7. Öffnungszeiten, Standort & farbige Google Maps (100% Eckig) */}
+        {/* 8. Öffnungszeiten, Standort & Google Maps (100% Eckig, ohne Ranken) */}
         <LocationHours />
       </main>
       <Footer onOpenAdmin={openAdmin} />

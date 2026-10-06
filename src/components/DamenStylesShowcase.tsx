@@ -3,7 +3,6 @@ import { GalleryItem } from '../data/content';
 import { getDamenStyles, getHerrenStyles } from '../data/styleStore';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { VineClassic } from './BotanicalAccent';
 
 export const DamenStylesShowcase: React.FC = () => {
   const [damenStyles, setDamenStyles] = useState<GalleryItem[]>([]);
@@ -40,18 +39,12 @@ export const DamenStylesShowcase: React.FC = () => {
   return (
     <section className="py-24 sm:py-32 bg-white relative overflow-hidden border-t border-zinc-200" id="frisuren">
       
-
-
       <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-24 relative z-10">
         
         {/* Damen Slider */}
         <div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="w-full overflow-hidden relative">
-              {/* Zarter botanischer Akzent hinter der Überschrift */}
-              <div className="absolute -top-4 right-1/4 pointer-events-none z-0 opacity-30 rotate-45 hidden lg:block">
-                <VineClassic className="w-20 h-44" />
-              </div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#2F5E3D] bg-[#2F5E3D]/10 border border-[#2F5E3D]/30 px-3.5 py-1 rounded-none mb-3 relative z-10">
                 Damen-Schnitt &amp; Coloration
               </span>
@@ -127,10 +120,6 @@ export const DamenStylesShowcase: React.FC = () => {
         <div className="pt-16 border-t border-zinc-200 relative">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="w-full overflow-hidden relative">
-              {/* Schräg nach oben wachsende, größere Ranke bei "Präzises Handwerk für den Mann" */}
-              <div className="absolute -top-10 sm:-top-16 left-1/3 pointer-events-none z-0 opacity-45 -rotate-35 hidden sm:block">
-                <VineClassic className="w-32 sm:w-40 h-80 sm:h-[380px]" />
-              </div>
               <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] text-[#2F5E3D] bg-[#2F5E3D]/10 border border-[#2F5E3D]/30 px-3.5 py-1 rounded-none mb-3 relative z-10">
                 Herren-Bereich
               </span>

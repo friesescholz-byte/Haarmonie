@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SALON_DATA } from '../data/content';
-import { Phone, MapPin, Mail, ArrowUpRight, X, Lock } from 'lucide-react';
+import { Phone, MapPin, Mail, ArrowUpRight, X } from 'lucide-react';
 
 interface FooterProps {
   onOpenAdmin?: () => void;
@@ -29,21 +29,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
               Individuelle Schnittkunst mit Haltung und zeitgemäße Ästhetik. Parkstraße 15, 31582 Nienburg/Weser.
             </p>
             <div className="flex items-center gap-4 text-xs text-zinc-400 font-semibold pt-1 uppercase tracking-wider">
-              <span>&bull; Friseurmeisterbetrieb</span>
-              <span>&bull; Aveda Partner</span>
+              <span>Friseurmeisterbetrieb</span>
             </div>
           </div>
 
-          {/* Col 2: Navigation - OHNE Transformationen */}
+          {/* Col 2: Navigation */}
           <div className="lg:col-span-2 space-y-4">
             <h4 className="font-heading font-bold text-xs uppercase tracking-widest text-white">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-xs text-zinc-400 uppercase tracking-wider">
               <li><a href="#ueber-uns" className="hover:text-white transition-colors">Über uns</a></li>
-              <li><a href="#partner" className="hover:text-white transition-colors">Partner</a></li>
-              <li><a href="#frisuren" className="hover:text-white transition-colors">Schnitt &amp; Farbe</a></li>
-              <li><a href="#tradition" className="hover:text-white transition-colors">Der Salon</a></li>
+              <li><a href="#leistungen" className="hover:text-white transition-colors">Leistungen</a></li>
+              <li><a href="#referenzen" className="hover:text-white transition-colors">Referenzen</a></li>
+              <li><a href="#instagram" className="hover:text-white transition-colors">Instagram</a></li>
               <li><a href="#termin" className="hover:text-white transition-colors">Termin anfragen</a></li>
             </ul>
           </div>
@@ -95,6 +94,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 <span>{SALON_DATA.email}</span>
+              </a>
+              <a
+                href={SALON_DATA.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-white transition-colors pt-1"
+              >
+                <ArrowUpRight className="w-4 h-4 flex-shrink-0 text-zinc-400" />
+                <span>Instagram: {SALON_DATA.instagramHandle}</span>
               </a>
             </div>
 
@@ -151,20 +159,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
             >
               Datenschutz
             </button>
-            <a
-              href="/admin"
-              onClick={(e) => {
-                if (onOpenAdmin) {
-                  e.preventDefault();
-                  onOpenAdmin();
-                }
-              }}
-              className="hover:text-white transition-colors inline-flex items-center gap-1 text-zinc-500 hover:text-zinc-300"
-              title="Admin-Bereich zur Verwaltung der Frisuren"
-            >
-              <Lock className="w-3 h-3" />
-              <span>Admin</span>
-            </a>
             <a
               href="https://scholz-friese-webdesign.de/"
               target="_blank"
