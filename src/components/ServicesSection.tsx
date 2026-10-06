@@ -4,14 +4,14 @@ import { SERVICES_DATA } from '../data/content';
 
 export const ServicesSection: React.FC = () => {
   return (
-    <section className="pt-28 pb-32 sm:pt-36 sm:pb-40 bg-[#101512] text-white relative z-20" id="leistungen">
+    <section className="pt-24 pb-28 sm:pt-36 sm:pb-40 bg-[#101512] text-white relative z-20" id="leistungen">
       
       {/* ========================================================================= */}
       {/* 1. OBERER DESIGN-ÜBERGANG: Weich fließende Haarsträhnen-Welle (100% knickfrei) */}
       {/* ========================================================================= */}
       <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-30 pointer-events-none -translate-y-[98%]">
         <svg
-          className="relative block w-full h-14 sm:h-20 lg:h-24"
+          className="relative block w-full h-10 sm:h-16 lg:h-24"
           viewBox="0 0 1440 80"
           fill="none"
           preserveAspectRatio="none"
@@ -57,37 +57,37 @@ export const ServicesSection: React.FC = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16 sm:space-y-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12 sm:space-y-16 lg:space-y-20 relative z-10">
         
         {/* Header auf schwarzem Grund mit weißer Schrift */}
-        <div className="max-w-3xl text-left space-y-4">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.15]">
+        <div className="max-w-3xl text-left space-y-3 sm:space-y-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-[1.18] sm:leading-[1.15]">
             Was wir für Ihr Haar tun.
           </h2>
-          <p className="text-base sm:text-lg text-zinc-300 leading-relaxed font-normal pt-1">
+          <p className="text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed font-normal pt-1">
             Von präzisen Schnitten bis zu individuellen Farbkonzepten: Bei Haarmonie geht es nicht um ein Standardprogramm, sondern um Leistungen, die zu Ihrem Haar, Ihrem Stil und Ihren Vorstellungen passen.
           </p>
         </div>
 
-        {/* Die 4 Kernbereiche im 2x2 Grid als WEISSE Kacheln mit schwarzem Text nach Kundenwunsch */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        {/* Die 4 Kernbereiche im Grid als WEISSE Kacheln mit schwarzem Text nach Kundenwunsch */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {SERVICES_DATA.map((service) => (
             <div
               key={service.id}
-              className="bg-white border border-zinc-200 hover:border-zinc-400 p-8 sm:p-10 flex flex-col justify-between transition-all duration-300 rounded-none shadow-xl hover:shadow-2xl group text-left"
+              className="bg-white border border-zinc-200 hover:border-zinc-400 p-6 sm:p-8 lg:p-10 flex flex-col justify-between transition-all duration-300 rounded-none shadow-xl hover:shadow-2xl group text-left"
             >
               <div>
                 {/* Image and Number Header */}
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-zinc-100">
+                <div className="flex items-center justify-between mb-5 sm:mb-6 pb-3 sm:pb-4 border-b border-zinc-100">
                   <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#2F5E3D] bg-[#2F5E3D]/10 px-2.5 py-1">
                     {service.tag}
                   </span>
-                  <span className="text-3xl font-heading font-bold text-zinc-300 group-hover:text-black transition-colors">
+                  <span className="text-2xl sm:text-3xl font-heading font-bold text-zinc-300 group-hover:text-black transition-colors">
                     {service.number}
                   </span>
                 </div>
 
-                <div className="aspect-[16/9] w-full bg-zinc-100 mb-6 overflow-hidden border border-zinc-200">
+                <div className="aspect-[16/9] w-full bg-zinc-100 mb-5 sm:mb-6 overflow-hidden border border-zinc-200">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -95,16 +95,16 @@ export const ServicesSection: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-2xl font-heading font-bold text-black mb-3">
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-black mb-2.5 sm:mb-3">
                   {service.title}
                 </h3>
 
-                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal mb-6">
+                <p className="text-xs sm:text-sm lg:text-base text-zinc-600 leading-relaxed font-normal mb-5 sm:mb-6">
                   {service.description}
                 </p>
 
                 {/* Details List */}
-                <ul className="space-y-2.5 pt-2 border-t border-zinc-100">
+                <ul className="space-y-2 sm:space-y-2.5 pt-2 border-t border-zinc-100">
                   {service.details.map((detail, idx) => (
                     <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700">
                       <Check className="w-4 h-4 text-[#2F5E3D] flex-shrink-0 mt-0.5" />
@@ -114,16 +114,16 @@ export const ServicesSection: React.FC = () => {
                 </ul>
               </div>
 
-              {/* Action Button */}
-              <div className="pt-8 mt-6 border-t border-zinc-100 flex items-center justify-between">
+              {/* Action Button - Responsive Umbruch für saubere Mobile-Ansicht */}
+              <div className="pt-6 sm:pt-8 mt-5 sm:mt-6 border-t border-zinc-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <a
                   href="#termin"
-                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black group-hover:text-[#2F5E3D] transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black group-hover:text-[#2F5E3D] transition-colors py-1"
                 >
-                  <Calendar className="w-3.5 h-3.5" />
+                  <Calendar className="w-3.5 h-3.5 text-[#2F5E3D]" />
                   <span>Jetzt anfragen</span>
                 </a>
-                <span className="text-xs text-zinc-400 font-medium">
+                <span className="text-[11px] sm:text-xs text-zinc-400 font-medium">
                   Persönliche Beratung inklusive
                 </span>
               </div>
@@ -132,18 +132,18 @@ export const ServicesSection: React.FC = () => {
         </div>
 
         {/* Beratungs-Hinweis (Weiß mit schwarzem Text für einheitliche Card-Optik) */}
-        <div className="bg-white border border-zinc-200 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-left shadow-lg">
+        <div className="bg-white border border-zinc-200 p-6 sm:p-8 lg:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-left shadow-lg">
           <div className="space-y-2">
-            <h4 className="text-lg font-heading font-bold text-black">
+            <h4 className="text-base sm:text-lg font-heading font-bold text-black">
               Sie sind sich unsicher, welche Behandlung die richtige für Sie ist?
             </h4>
-            <p className="text-sm text-zinc-600">
+            <p className="text-xs sm:text-sm text-zinc-600">
               Wir nehmen uns vor jedem Schnitt und jeder Farbveränderung die nötige Zeit für eine individuelle Haardiagnose.
             </p>
           </div>
           <a
             href="#termin"
-            className="flex-shrink-0 bg-black hover:bg-zinc-800 text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest transition-all rounded-none font-sans font-bold"
+            className="w-full sm:w-auto text-center flex-shrink-0 bg-black hover:bg-zinc-800 text-white px-8 py-3.5 text-xs font-bold uppercase tracking-widest transition-all rounded-none font-sans font-bold"
           >
             Beratungstermin buchen
           </a>
@@ -156,7 +156,7 @@ export const ServicesSection: React.FC = () => {
       {/* ========================================================================= */}
       <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-30 pointer-events-none translate-y-[98%]">
         <svg
-          className="relative block w-full h-14 sm:h-20 lg:h-24"
+          className="relative block w-full h-10 sm:h-16 lg:h-24"
           viewBox="0 0 1440 80"
           fill="none"
           preserveAspectRatio="none"

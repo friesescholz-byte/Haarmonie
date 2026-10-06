@@ -31,11 +31,11 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center">
         
         {/* Prominentes Logo */}
-        <a href="#" className="flex-shrink-0 flex items-center pr-6 group">
+        <a href="#" className="flex-shrink-0 flex items-center pr-4 sm:pr-6 group">
           <img
             src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Haarmonie_Logo_transparent_ergebnis.webp"
             alt="Haarmonie Matthias Zahn Logo"
-            className="h-14 sm:h-18 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter invert"
+            className="h-12 sm:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter invert"
           />
         </a>
 
@@ -71,11 +71,12 @@ export const Navbar: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger mit min. 44px Touch-Target */}
         <button
+          type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-black rounded-none"
-          aria-label="Menü"
+          className="lg:hidden w-11 h-11 flex items-center justify-center text-black rounded-none cursor-pointer"
+          aria-label={mobileMenuOpen ? 'Menü schließen' : 'Menü öffnen'}
         >
           {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
@@ -83,13 +84,13 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-zinc-200 px-6 py-6 space-y-4 shadow-2xl animate-fadeIn rounded-none">
+        <div className="lg:hidden bg-white border-b border-zinc-200 px-6 py-6 space-y-2 shadow-2xl animate-fadeIn rounded-none">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base font-medium text-zinc-900 hover:text-black py-1.5 uppercase tracking-wider"
+              className="block text-base font-semibold text-zinc-900 hover:text-black py-2.5 uppercase tracking-wider min-h-[44px] flex items-center border-b border-zinc-50 last:border-0"
             >
               {link.label}
             </a>
@@ -98,14 +99,14 @@ export const Navbar: React.FC = () => {
             <a
               href="#termin"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3.5 bg-black text-white rounded-none text-center text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-black text-white rounded-none text-center text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 min-h-[48px]"
             >
               <Calendar className="w-4 h-4" />
               <span>Termin online anfragen</span>
             </a>
             <a
               href={`tel:${SALON_DATA.phoneClean}`}
-              className="w-full py-3 bg-white text-zinc-900 rounded-none text-center text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 border border-zinc-300"
+              className="w-full py-3 bg-white text-zinc-900 rounded-none text-center text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 border border-zinc-300 min-h-[48px]"
             >
               <Phone className="w-4 h-4" />
               <span>{SALON_DATA.phone}</span>

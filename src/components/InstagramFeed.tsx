@@ -82,7 +82,7 @@ export const InstagramFeed: React.FC = () => {
             href={SALON_DATA.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-black hover:bg-zinc-800 text-white px-7 py-3.5 rounded-none text-xs font-bold uppercase tracking-widest transition-all self-start md:self-end border border-black shadow-xs"
+            className="inline-flex items-center justify-center gap-2.5 bg-black hover:bg-zinc-800 text-white px-7 py-3.5 rounded-none text-xs font-bold uppercase tracking-widest transition-all w-full sm:w-auto self-start md:self-end border border-black shadow-xs"
           >
             <InstagramIcon className="w-4 h-4" />
             <span>Auf Instagram folgen</span>
