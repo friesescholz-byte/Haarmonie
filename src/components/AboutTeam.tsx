@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Phone, X } from 'lucide-react';
+import { Calendar, Phone, X, ArrowUpRight } from 'lucide-react';
 import { SALON_DATA, PARTNER_BRANDS, PartnerBrand } from '../data/content';
 
 // Optisch perfekt balancierte Logogrößen für die Partner
@@ -118,56 +118,94 @@ export const AboutTeam: React.FC = () => {
       {/* Partner Lightbox Modal - Mobil mit max-height Scroll & leichtem Schließen */}
       {selectedPartner && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-sm animate-fade-in"
           onClick={() => setSelectedPartner(null)}
         >
-          <div
-            className="bg-white max-w-xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 border border-zinc-300 rounded-none relative shadow-2xl text-left"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button - 44px Touch Target */}
-            <button
-              type="button"
-              onClick={() => setSelectedPartner(null)}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-11 h-11 flex items-center justify-center text-zinc-500 hover:text-black hover:bg-zinc-100 transition-colors rounded-none cursor-pointer"
-              aria-label="Schließen"
+          {selectedPartner.modalImage ? (
+            /* Großes Bild-Modal für Aveda & Nailberry (ohne jeglichen Text nach Kundenwunsch) */
+            <div
+              className="bg-white p-2 sm:p-3 border border-zinc-300 rounded-none relative shadow-2xl max-w-5xl w-full max-h-[92vh] flex items-center justify-center overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
             >
-              <X className="w-5 h-5" />
-            </button>
-
-            {/* Modal Header with Large Logo */}
-            <div className="mb-6 pb-6 border-b border-zinc-100 flex items-center justify-center min-h-[90px] sm:min-h-[100px] bg-stone-50/70 p-4 border">
-              <img
-                src={selectedPartner.logo}
-                alt={`${selectedPartner.name} Logo`}
-                className="max-h-14 sm:max-h-20 max-w-[220px] sm:max-w-[240px] w-auto object-contain"
-              />
-            </div>
-
-            <div className="space-y-3 sm:space-y-4">
-              <h4 className="text-xl sm:text-2xl font-heading font-bold text-black">
-                {selectedPartner.name}
-              </h4>
-
-              <p className="text-sm font-semibold text-zinc-800 italic">
-                „{selectedPartner.tagline}“
-              </p>
-
-              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal pt-1">
-                {selectedPartner.description}
-              </p>
-            </div>
-
-            <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-zinc-100 flex justify-end">
+              {/* Schließen-Button - Kontrastreich & touch-optimiert */}
               <button
                 type="button"
                 onClick={() => setSelectedPartner(null)}
-                className="w-full sm:w-auto bg-black hover:bg-zinc-800 text-white px-6 py-3 text-xs font-bold uppercase tracking-wider rounded-none transition-colors cursor-pointer text-center"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 w-11 h-11 flex items-center justify-center bg-black/80 hover:bg-black text-white rounded-none transition-colors cursor-pointer shadow-lg"
+                aria-label="Schließen"
               >
-                Schließen
+                <X className="w-5 h-5" />
               </button>
+
+              <img
+                src={selectedPartner.modalImage}
+                alt={selectedPartner.name}
+                className="w-full h-auto max-h-[86vh] object-contain block select-none"
+              />
             </div>
-          </div>
+          ) : (
+            /* Text- & Logo-Modal für die anderen Partner (SIMPLIE, Hair Help the Oceans, Intercoiffure Mondial) */
+            <div
+              className="bg-white max-w-xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 border border-zinc-300 rounded-none relative shadow-2xl text-left"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button - 44px Touch Target */}
+              <button
+                type="button"
+                onClick={() => setSelectedPartner(null)}
+                className="absolute top-4 right-4 sm:top-5 sm:right-5 w-11 h-11 flex items-center justify-center text-zinc-500 hover:text-black hover:bg-zinc-100 transition-colors rounded-none cursor-pointer"
+                aria-label="Schließen"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Modal Header with Large Logo */}
+              <div className="mb-6 pb-6 border-b border-zinc-100 flex items-center justify-center min-h-[90px] sm:min-h-[100px] bg-stone-50/70 p-4 border border-zinc-200/60">
+                <img
+                  src={selectedPartner.logo}
+                  alt={`${selectedPartner.name} Logo`}
+                  className="max-h-14 sm:max-h-20 max-w-[220px] sm:max-w-[240px] w-auto object-contain"
+                />
+              </div>
+
+              <div className="space-y-3 sm:space-y-4">
+                <h4 className="text-xl sm:text-2xl font-heading font-bold text-black">
+                  {selectedPartner.name}
+                </h4>
+
+                <p className="text-sm font-semibold text-zinc-800 italic">
+                  „{selectedPartner.tagline}“
+                </p>
+
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal pt-1">
+                  {selectedPartner.description}
+                </p>
+              </div>
+
+              {/* Footer mit Schließen-Button & Website-Link Button */}
+              <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-zinc-100 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
+                <button
+                  type="button"
+                  onClick={() => setSelectedPartner(null)}
+                  className="w-full sm:w-auto bg-zinc-100 hover:bg-zinc-200 text-zinc-800 px-6 py-3 text-xs font-bold uppercase tracking-wider rounded-none transition-colors cursor-pointer text-center"
+                >
+                  Schließen
+                </button>
+
+                {selectedPartner.website && (
+                  <a
+                    href={selectedPartner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2F5E3D] hover:bg-[#254b31] text-white px-6 py-3 text-xs font-bold uppercase tracking-wider rounded-none transition-colors text-center shadow-xs"
+                  >
+                    <span>Zur Website</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </section>

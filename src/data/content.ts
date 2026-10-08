@@ -23,6 +23,7 @@ export interface PartnerBrand {
   tagline: string;
   description: string;
   website?: string;
+  modalImage?: string;
 }
 
 export interface ReviewItem {
@@ -78,7 +79,8 @@ export const PARTNER_BRANDS: PartnerBrand[] = [
     category: "Pflanzenhaarfarben & Botanical Care",
     tagline: "100% vegane Haarpflege im Einklang mit der Natur",
     description: "Aveda nutzt hochwirksame pflanzliche Essenzen statt aggressiver Chemie. Die Farben basieren auf bis zu 96% natürlich gewonnenen Inhaltsstoffen – für seidigen Glanz, brillante Nuancen und maximal geschontes Haar.",
-    website: "https://www.aveda.de"
+    website: "https://www.aveda.de",
+    modalImage: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Aveda_Missionsbild_01.webp"
   },
   {
     name: "SIMPLIE",
@@ -86,7 +88,7 @@ export const PARTNER_BRANDS: PartnerBrand[] = [
     category: "Haarverdichtung & Verlängerung",
     tagline: "Die innovative Methode für unsichtbare Haarfülle",
     description: "Mit der professionellen SIMPLIE Methode schaffen wir natürliche Ergebnisse, die sich harmonisch und federleicht in Ihr eigenes Haar einfügen. Perfekt für schonende Verdichtung, mehr Länge und ein unvergleichlich volles Haargefühl.",
-    website: "https://simplie.de"
+    website: "https://simpliehair.com/"
   },
   {
     name: "Nailberry",
@@ -94,7 +96,8 @@ export const PARTNER_BRANDS: PartnerBrand[] = [
     category: "L'Oxygéné Luxus-Nagelpflege",
     tagline: "Atmungsaktive & schadstofffreie Farben aus London",
     description: "Nailberry steht für mehrfach ausgezeichnete, 12-Free und sauerstoffdurchlässige Lacke. Schönheit und Gesundheit für Nägel ohne Kompromisse.",
-    website: "https://www.nailberry.com"
+    website: "https://www.nailberry.com",
+    modalImage: "https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/CF_Herbst_RGB%20Mood%20Natur.jpg"
   },
   {
     name: "Hair Help the Oceans",

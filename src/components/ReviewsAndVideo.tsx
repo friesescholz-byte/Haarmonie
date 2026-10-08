@@ -90,56 +90,98 @@ export const ReviewsAndVideo: React.FC = () => {
           ))}
         </div>
 
-        {/* 3. Salon-Video ("Was für ein besonderer Tag!") */}
-        <div className="pt-8 sm:pt-10 border-t border-zinc-200 space-y-6">
-          <div className="max-w-3xl text-left space-y-2">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2F5E3D]">
-              Einblicke in den Salon
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-black">
-              Was für ein besonderer Tag bei Haarmonie.
-            </h3>
-            <p className="text-sm text-zinc-600">
-              Erleben Sie das Ambiente, die Menschen und die Handwerkskunst in der Parkstraße 15 in Bewegung.
-            </p>
-          </div>
+        {/* 3. Salon-Video ("Was für ein besonderer Tag!" - Hochformat 9:16) */}
+        <div className="pt-10 sm:pt-14 border-t border-zinc-200">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            
+            {/* Linke Spalte: Redaktionelle Einblicke & Botschaft */}
+            <div className="lg:col-span-7 text-left space-y-5 sm:space-y-6">
+              <div className="space-y-2.5">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2F5E3D]">
+                  Einblicke in den Salon
+                </span>
+                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-bold text-black tracking-tight leading-[1.15]">
+                  Was für ein besonderer Tag bei Haarmonie.
+                </h3>
+              </div>
 
-          <div className="relative aspect-video w-full max-w-5xl mx-auto bg-black rounded-none overflow-hidden border border-zinc-300 shadow-lg group">
-            <video
-              ref={videoRef}
-              src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Was%20f%C3%BCr%20ein%20besonderer%20Tag!%20%20.mp4"
-              playsInline
-              autoPlay
-              muted
-              loop
-              className="w-full h-full object-cover"
-              onClick={togglePlay}
-            >
-              Ihr Browser unterstützt dieses Video nicht.
-            </video>
+              <p className="text-base sm:text-lg text-zinc-600 leading-relaxed font-normal">
+                Erleben Sie das Ambiente, die Menschen und die Handwerkskunst in der Parkstraße 15 in Bewegung. Ein Ort der Ruhe, Entspannung und meisterhaften Friseurkunst.
+              </p>
 
-            {/* Video Controls Overlay - Touch-optimiert mit min. 44px Buttons */}
-            <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 flex items-center gap-2 z-20">
-              <button
-                type="button"
-                onClick={togglePlay}
-                className="w-11 h-11 flex items-center justify-center bg-black/75 hover:bg-black text-white rounded-none backdrop-blur-sm border border-white/20 transition-all cursor-pointer"
-                title={isPlaying ? 'Pause' : 'Abspielen'}
-                aria-label={isPlaying ? 'Pause' : 'Abspielen'}
-              >
-                {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
-              </button>
+              {/* Redaktionelle Salon-Merkmale */}
+              <div className="pt-2 border-t border-zinc-100 space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#2F5E3D] mt-2 shrink-0" />
+                  <p className="text-xs sm:text-sm text-zinc-700">
+                    <strong className="text-black font-semibold">Persönliche Atmosphäre:</strong> Zeit für individuelle Beratung und typgerechte Schnitte.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#2F5E3D] mt-2 shrink-0" />
+                  <p className="text-xs sm:text-sm text-zinc-700">
+                    <strong className="text-black font-semibold">Aveda Aroma-Rituale:</strong> Entspannung für Kopfhaut, Haar und Sinne.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#2F5E3D] mt-2 shrink-0" />
+                  <p className="text-xs sm:text-sm text-zinc-700">
+                    <strong className="text-black font-semibold">Handwerkliche Perfektion:</strong> Typgerechtes Styling auf Meister-Niveau.
+                  </p>
+                </div>
+              </div>
 
-              <button
-                type="button"
-                onClick={toggleMute}
-                className="w-11 h-11 flex items-center justify-center bg-black/75 hover:bg-black text-white rounded-none backdrop-blur-sm border border-white/20 transition-all cursor-pointer"
-                title={isMuted ? 'Ton einschalten' : 'Ton stummschalten'}
-                aria-label={isMuted ? 'Ton einschalten' : 'Ton stummschalten'}
-              >
-                {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-              </button>
+              <div className="pt-2">
+                <a
+                  href="#termin"
+                  className="inline-flex items-center justify-center gap-2 bg-black hover:bg-zinc-800 text-white px-7 py-3.5 rounded-none text-xs font-bold uppercase tracking-widest transition-all border border-black shadow-xs"
+                >
+                  <span>Termin vereinbaren</span>
+                </a>
+              </div>
             </div>
+
+            {/* Rechte Spalte: Echtes Hochkant-Video (9:16 Portrait-Format) */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] bg-black rounded-none overflow-hidden border border-zinc-300 shadow-xl group">
+                <video
+                  ref={videoRef}
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Was%20f%C3%BCr%20ein%20besonderer%20Tag!%20%20.mp4"
+                  playsInline
+                  autoPlay
+                  muted
+                  loop
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={togglePlay}
+                >
+                  Ihr Browser unterstützt dieses Video nicht.
+                </video>
+
+                {/* Video Controls Overlay - Touch-optimiert mit min. 44px Buttons */}
+                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 flex items-center gap-2 z-20">
+                  <button
+                    type="button"
+                    onClick={togglePlay}
+                    className="w-11 h-11 flex items-center justify-center bg-black/75 hover:bg-black text-white rounded-none backdrop-blur-sm border border-white/20 transition-all cursor-pointer"
+                    title={isPlaying ? 'Pause' : 'Abspielen'}
+                    aria-label={isPlaying ? 'Pause' : 'Abspielen'}
+                  >
+                    {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={toggleMute}
+                    className="w-11 h-11 flex items-center justify-center bg-black/75 hover:bg-black text-white rounded-none backdrop-blur-sm border border-white/20 transition-all cursor-pointer"
+                    title={isMuted ? 'Ton einschalten' : 'Ton stummschalten'}
+                    aria-label={isMuted ? 'Ton einschalten' : 'Ton stummschalten'}
+                  >
+                    {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                  </button>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
