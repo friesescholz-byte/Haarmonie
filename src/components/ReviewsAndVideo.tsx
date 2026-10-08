@@ -1,11 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { Quote, CheckCircle2, Play, Pause, Volume2, VolumeX, ArrowUpRight } from 'lucide-react';
+import { Quote, CheckCircle2, Play, Pause, ArrowUpRight } from 'lucide-react';
 import { SALON_DATA, REVIEWS } from '../data/content';
 
 export const ReviewsAndVideo: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -16,12 +15,6 @@ export const ReviewsAndVideo: React.FC = () => {
       videoRef.current.pause();
       setIsPlaying(false);
     }
-  };
-
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !videoRef.current.muted;
-    setIsMuted(videoRef.current.muted);
   };
 
   return (
@@ -146,7 +139,7 @@ export const ReviewsAndVideo: React.FC = () => {
               <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] bg-black rounded-none overflow-hidden border border-zinc-300 shadow-xl group">
                 <video
                   ref={videoRef}
-                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Was%20f%C3%BCr%20ein%20besonderer%20Tag!%20%20.mp4"
+                  src="https://pub-b33108412309406a9a941ddc51e9a5b9.r2.dev/Haarmonie/Was%20f%C3%BCr%20ein%20besonderer%20Tag!Aveda-Video.mp4"
                   playsInline
                   autoPlay
                   muted
@@ -157,26 +150,16 @@ export const ReviewsAndVideo: React.FC = () => {
                   Ihr Browser unterstützt dieses Video nicht.
                 </video>
 
-                {/* Video Controls Overlay - Touch-optimiert mit min. 44px Buttons */}
-                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 flex items-center gap-2 z-20">
+                {/* Video Controls Overlay - Nur Play/Pause, stummgeschaltet nach Kundenwunsch */}
+                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20">
                   <button
                     type="button"
                     onClick={togglePlay}
-                    className="w-11 h-11 flex items-center justify-center bg-black/75 hover:bg-black text-white rounded-none backdrop-blur-sm border border-white/20 transition-all cursor-pointer"
+                    className="w-11 h-11 flex items-center justify-center bg-black/75 hover:bg-black text-white rounded-none backdrop-blur-sm border border-white/20 transition-all cursor-pointer shadow-md"
                     title={isPlaying ? 'Pause' : 'Abspielen'}
                     aria-label={isPlaying ? 'Pause' : 'Abspielen'}
                   >
                     {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={toggleMute}
-                    className="w-11 h-11 flex items-center justify-center bg-black/75 hover:bg-black text-white rounded-none backdrop-blur-sm border border-white/20 transition-all cursor-pointer"
-                    title={isMuted ? 'Ton einschalten' : 'Ton stummschalten'}
-                    aria-label={isMuted ? 'Ton einschalten' : 'Ton stummschalten'}
-                  >
-                    {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                   </button>
                 </div>
               </div>
