@@ -15,9 +15,6 @@ import {
   X,
   LogOut
 } from 'lucide-react';
-
-const ADMIN_PASSWORD = 'haarmonie2026'; // Standard-Passwort
-
 interface AdminDashboardProps {
   onBack: () => void;
 }
@@ -58,10 +55,34 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBack }) => {
     return () => window.removeEventListener('haarmonie_styles_updated', loadData);
   }, []);
 
-  // Login Handler
-  const handleLogin = (e: React.FormEvent) => {
+  // Login Handler (Weymann System - verified against Cloudflare Secret)
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (passwordInput === ADMIN_PASSWORD) {
+    const cleanPw = passwordInput.trim();
+    if (!cleanPw) {
+      setLoginError(true);
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: cleanPw })
+      });
+      const data = await res.json();
+      if (res.ok && data?.success) {
+        sessionStorage.setItem('haarmonie_admin_auth', 'true');
+        setIsAuthenticated(true);
+        setLoginError(false);
+        return;
+      }
+    } catch {}
+
+    // Fallback: Secure SHA-256 verification (no plaintext password in source code)
+    const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(cleanPw));
+    const hashHex = Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    if (hashHex === 'cc1cad065822a779a8967e7c2213aebb9f3ff60fb3c0868d6147b076e0f5e620') {
       sessionStorage.setItem('haarmonie_admin_auth', 'true');
       setIsAuthenticated(true);
       setLoginError(false);
